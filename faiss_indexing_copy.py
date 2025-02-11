@@ -12,8 +12,6 @@ from joblib import load
 from sklearn.decomposition import PCA
 import torch
 
-from cnn_model.features_extraction import get_vector
-
 
 def load_faiss_index(index_path):
     """
