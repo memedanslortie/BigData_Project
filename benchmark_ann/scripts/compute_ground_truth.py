@@ -42,5 +42,8 @@ if __name__ == "__main__":
     dataset_path = "datasets/fashion-mnist-784-euclidean.hdf5"
     data = load_dataset(dataset_path)
     queries = data[:1000]
+    with h5py.File("results/queriesGT.hdf5", "w") as f:
+        f.create_dataset("queries", data=queries)
+
 
     compute_exact_neighbors(data, queries, k=10, num_workers=4)

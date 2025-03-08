@@ -1,6 +1,7 @@
 import time
 import numpy as np
 import argparse
+import h5py
 from utils.load_dataset import load_dataset, load_ground_truth
 from methods import FAISSIndexer  
 
@@ -12,10 +13,15 @@ def compute_recall(true_neighbors, approx_neighbors, k=10):
     ]
     return np.mean(recall_values)
 
-def benchmark_faiss(dataset_path, k=10, num_queries=1000):
+def load_queries(queries_path, num_queries):
+    """Charge les requêtes pré-sauvegardées pour assurer la cohérence du benchmark"""
+    with h5py.File(queries_path, "r") as f:
+        return f["queries"][:num_queries]
+
+def benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000):
     """Évalue FAISS (IVF-PQ)"""
     data = load_dataset(dataset_path)
-    queries = data[:num_queries]
+    queries = load_queries(queries_path, num_queries)  # Chargement des requêtes sauvegardées
     true_neighbors = load_ground_truth("results/ground_truth.hdf5")[:num_queries]
 
     print("\nTesting FAISS (IVF-PQ)...")
@@ -47,6 +53,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     dataset_path = f"datasets/{args.dataset}"
-    benchmark_faiss(dataset_path, k=10, num_queries=1000)
+    queries_path = "results/queriesGT.hdf5"  # Chemin vers les requêtes sauvegardées
 
-# exemple d'execution : python scripts/benchmark.py --dataset=fashion-mnist-784-euclidean.hdf5
+    benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000)
+
+# Exemple d'exécution : 
+# python scripts/benchmark.py --dataset=fashion-mnist-784-euclidean.hdf5
