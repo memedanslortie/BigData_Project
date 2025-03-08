@@ -2,7 +2,7 @@ import faiss
 import numpy as np
 
 class FAISSIndexer:
-    def __init__(self, dim, nlist=100, nprobe=10):
+    def __init__(self, dim, nlist=100, nprobe=20):
         """Initialise un index FAISS IVF-PQ"""
         self.dim = dim
         self.nlist = nlist  
@@ -33,3 +33,18 @@ class FAISSIndexer:
         """Charge un index FAISS pré-enregistré"""
         self.index = faiss.read_index(path)
         self.trained = True
+
+
+class FAISSExactIndexer:
+    def __init__(self, dim):
+        """Initialise un index FAISS exact (brute-force)"""
+        self.index = faiss.IndexFlatL2(dim)  # Index exact basé sur la distance L2
+
+    def train(self, data):
+        """Ajoute simplement les données (pas d'entraînement nécessaire)"""
+        self.index.add(data)
+
+    def search(self, queries, k):
+        """Recherche exacte des k plus proches voisins"""
+        distances, indices = self.index.search(queries, k)
+        return distances, indices
