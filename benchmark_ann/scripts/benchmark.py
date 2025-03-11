@@ -7,7 +7,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from utils.load_dataset import load_dataset, load_ground_truth
-from methods import FAISSIndexer  
+from methods import FAISSIndexer , VoyagerIndexer
 
 def compute_recall(true_neighbors, approx_neighbors, k=10):
     """Calcule le recall@k"""
@@ -50,16 +50,44 @@ def benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000):
 
     return {"recall": recall, "time": search_time}
 
+def benchmark_voyager(dataset_path, queries_path, k=10, num_queries=1000):
+    """Évalue Voyager"""
+    data = load_dataset(dataset_path)
+    queries = load_queries(queries_path, num_queries)  # Chargement des requêtes sauvegardées
+    true_neighbors = load_ground_truth("results/ground_truth.hdf5")[:num_queries]
+
+    print("\nTesting Voyager...")
+    indexer = VoyagerIndexer(dim=data.shape[1])
+    indexer.add_items(data)
+
+    start_time = time.time()
+    distances, indices = [], []
+    for query in queries:
+        d, i = indexer.search(query, k)
+        distances.append(d)
+        indices.append(i)
+    end_time = time.time()
+
+    recall = compute_recall(true_neighbors, indices, k)
+    search_time = (end_time - start_time) / num_queries
+    print(f"Voyager Recall@{k}: {recall:.4f}")
+    print(f"Voyager Search Time: {search_time:4f} seconds")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=str, default="fashion-mnist-784-euclidean.hdf5",
                         help="Nom du fichier HDF5 à utiliser")
+    parser.add_argument("--method", type=str, choices=["faiss", "voyager"], required=True, help="Method to benchmark")
     args = parser.parse_args()
-
+    
     dataset_path = f"datasets/{args.dataset}"
     queries_path = "results/queriesGT.hdf5"  # Chemin vers les requêtes sauvegardées
 
-    benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000)
+    if args.method == "faiss":
+       benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000)
+    elif args.method == "voyager":
+        benchmark_voyager(dataset_path, queries_path, k=10, num_queries=1000)
+    
 
 # Exemple d'exécution : 
 # python scripts/benchmark.py --dataset=fashion-mnist-784-euclidean.hdf5
