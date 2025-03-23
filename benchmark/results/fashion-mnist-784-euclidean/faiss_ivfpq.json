@@ -1,0 +1,80 @@
+[
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 50,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.0706,
+      "search_time": 1.1712694168090821e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 50,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.0706,
+      "search_time": 1.2006592750549316e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 50,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.07059,
+      "search_time": 1.9230794906616212e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.07435,
+      "search_time": 7.016921043395996e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.07439,
+      "search_time": 9.000587463378906e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.07439,
+      "search_time": 1.3477706909179688e-05
+    }
+  }
+]

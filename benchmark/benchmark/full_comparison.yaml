@@ -1,0 +1,20 @@
+dataset: fashion-mnist-784-euclidean
+distance: euclidean
+k: 10
+algorithms:
+  - name: faiss_ivfpq
+    module: algos.faiss_ivfpq
+    class: FaissIVFPQ
+    parameters:
+      nlist: [50, 100]
+      m: [8]
+      nbits: [8]
+      nprobe: [5, 10, 20, 30, 40, 50]
+
+  - name: voyager
+    module: algos.voyager
+    class: VoyagerANN
+    parameters:
+      M: [12]
+      ef_construction: [200]
+      query_ef: [10, 20, 40, 60, 100, 150, 200, 300, 400, 500]
