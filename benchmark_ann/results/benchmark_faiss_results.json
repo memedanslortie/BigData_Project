@@ -1,0 +1,98 @@
+[
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.44110000000000005,
+        "search_time": 2.1021842956542968e-05,
+        "faiss_params": {
+            "nlist": 64,
+            "nprobe": 1
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.4722,
+        "search_time": 1.6030073165893555e-05,
+        "faiss_params": {
+            "nlist": 64,
+            "nprobe": 4
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.44289999999999996,
+        "search_time": 6.437063217163086e-06,
+        "faiss_params": {
+            "nlist": 128,
+            "nprobe": 1
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.5043,
+        "search_time": 7.720947265625e-06,
+        "faiss_params": {
+            "nlist": 256,
+            "nprobe": 4
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.5240999999999999,
+        "search_time": 9.296894073486328e-06,
+        "faiss_params": {
+            "nlist": 512,
+            "nprobe": 8
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.5287999999999999,
+        "search_time": 1.2807846069335937e-05,
+        "faiss_params": {
+            "nlist": 1024,
+            "nprobe": 16
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.5390999999999999,
+        "search_time": 2.015995979309082e-05,
+        "faiss_params": {
+            "nlist": 2048,
+            "nprobe": 32
+        }
+    },
+    {
+        "method": "FAISS (IVF-PQ)",
+        "dataset": "datasets/fashion-mnist-784-euclidean.hdf5",
+        "num_queries": 1000,
+        "k": 10,
+        "recall": 0.5247,
+        "search_time": 5.481076240539551e-05,
+        "faiss_params": {
+            "nlist": 512,
+            "nprobe": 200
+        }
+    }
+]

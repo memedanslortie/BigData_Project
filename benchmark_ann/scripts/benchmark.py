@@ -2,7 +2,7 @@ import time
 import numpy as np
 import argparse
 import h5py
-
+import json
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -22,33 +22,67 @@ def load_queries(queries_path, num_queries):
     with h5py.File(queries_path, "r") as f:
         return f["queries"][:num_queries]
 
+
 def benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000):
-    """Évalue FAISS (IVF-PQ)"""
     data = load_dataset(dataset_path)
-    queries = load_queries(queries_path, num_queries)  # Chargement des requêtes sauvegardées
+    queries = load_queries(queries_path, num_queries)
     true_neighbors = load_ground_truth("results/ground_truth.hdf5")[:num_queries]
 
-    print("\nTesting FAISS (IVF-PQ)...")
-    indexer = FAISSIndexer(dim=data.shape[1])
+    param_grid = [
+        {"nlist": 64, "nprobe": 1},
+        {"nlist": 64, "nprobe": 4},
+        {"nlist": 128, "nprobe": 1},
+        {"nlist": 256, "nprobe": 4},
+        {"nlist": 512, "nprobe": 8},
+        {"nlist": 1024, "nprobe": 16},
+        {"nlist": 2048, "nprobe": 32},
+        {"nlist": 512, "nprobe": 200},
+    ]
 
-    try:
-        indexer.load_index("results/faiss_index.ivfpq")
-        print("Index FAISS chargé depuis le fichier.")
-    except:
-        print("Aucun index sauvegardé, entraînement en cours...")
+    for params in param_grid:
+        print(f"\n→ FAISS IVF-PQ avec nlist={params['nlist']} | nprobe={params['nprobe']}")
+        indexer = FAISSIndexer(
+            dim=data.shape[1],
+            nlist=params["nlist"],
+            nprobe=params["nprobe"]
+        )
         indexer.train(data)
-        indexer.save_index("results/faiss_index.ivfpq")
 
-    start_time = time.time()
-    _, approx_neighbors = indexer.search(queries, k)
-    end_time = time.time()
+        start_time = time.time()
+        _, approx_neighbors = indexer.search(queries, k)
+        end_time = time.time()
 
-    recall = compute_recall(true_neighbors, approx_neighbors, k)
-    search_time = (end_time - start_time) / num_queries
+        recall = compute_recall(true_neighbors, approx_neighbors, k)
+        search_time = (end_time - start_time) / num_queries
 
-    print(f"Recall@{k}: {recall:.4f}, Time: {search_time:.6f} sec/query")
+        print(f"Recall@{k} = {recall:.4f} | {search_time:.6f} sec/query")
 
-    return {"recall": recall, "time": search_time}
+        result = {
+            "method": "FAISS (IVF-PQ)",
+            "dataset": dataset_path,
+            "num_queries": num_queries,
+            "k": k,
+            "recall": recall,
+            "search_time": search_time,
+            "faiss_params": params
+        }
+        save_results_to_json(result)
+        
+def save_results_to_json(result, filename="results/benchmark_faiss_results.json"):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    if os.path.exists(filename):
+        try:
+            with open(filename, "r") as f:
+                existing = json.load(f)
+        except json.JSONDecodeError:
+            existing = []
+    else:
+        existing = []
+
+    existing.append(result)
+    with open(filename, "w") as f:
+        json.dump(existing, f, indent=4)
+
 
 def benchmark_voyager(dataset_path, queries_path, k=10, num_queries=1000):
     """Évalue Voyager"""
@@ -81,16 +115,16 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     dataset_path = f"datasets/{args.dataset}"
-    queries_path = "results/queriesGT.hdf5"  # Chemin vers les requêtes sauvegardées
+    queries_path = "results/queriesGT.hdf5" 
 
     if args.method == "faiss":
-       benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000)
+        benchmark_faiss(dataset_path, queries_path, k=10, num_queries=1000)
     elif args.method == "voyager":
         benchmark_voyager(dataset_path, queries_path, k=10, num_queries=1000)
     
 
 # Exemple d'exécution : 
-# python scripts/benchmark.py --dataset=fashion-mnist-784-euclidean.hdf5
+# python scripts/benchmark.py --dataset=fashion-mnist-784-euclidean.hdf5 --method faiss
 """
 If each method has different parameters, we don't know if one method is better or if its hyperparameters are just better chosen?
 """
