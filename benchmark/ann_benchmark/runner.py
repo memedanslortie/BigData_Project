@@ -15,15 +15,15 @@ def run_benchmark(config):
         
         param_grid = expand_grid(algo_conf['parameters'])
 
-    for params in param_grid:
-        algo = cls(**params)
-        algo.fit(xb)
-        I = algo.query(xq, k)
-        
-        metrics = evaluate(I, gt, k)
-        metrics["search_time"] = algo.last_search_time / len(xq)  # temps moyen par requête
+        for params in param_grid:
+            algo = cls(**params)
+            algo.fit(xb)
+            I = algo.query(xq, k)
+            
+            metrics = evaluate(I, gt, k)
+            metrics["search_time"] = algo.last_search_time / len(xq)  # temps moyen par requête
 
-        save_result(dataset_name, algo_conf['name'], params, metrics)
+            save_result(dataset_name, algo_conf['name'], params, metrics)
 
 def expand_grid(param_dict):
     from itertools import product
@@ -53,4 +53,3 @@ def save_result(dataset, algo_name, params, metrics):
 
     with open(output_path, 'w') as f:
         json.dump(data, f, indent=2)
-

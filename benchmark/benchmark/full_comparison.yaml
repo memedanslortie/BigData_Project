@@ -18,3 +18,10 @@ algorithms:
       M: [12]
       ef_construction: [200]
       query_ef: [10, 20, 40, 60, 100, 150, 200, 300, 400, 500]
+
+  - name: annoy
+    module: algos.annoy
+    class: Annoy
+    parameters:
+      n_trees: [100, 200, 400]
+      search_k: [1000, 2000,10000,20000]
