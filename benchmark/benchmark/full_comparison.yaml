@@ -6,22 +6,9 @@ algorithms:
     module: algos.faiss_ivfpq
     class: FaissIVFPQ
     parameters:
-      nlist: [50, 100]
-      m: [8]
+      nlist: [512, 1204, 2048, 4096]
+      nprobe: [1, 5, 10, 100]
+      m: [16]
       nbits: [8]
-      nprobe: [5, 10, 20, 30, 40, 50]
+      k_reorder: [0, 10, 100]
 
-  - name: voyager
-    module: algos.voyager
-    class: VoyagerANN
-    parameters:
-      M: [12]
-      ef_construction: [200]
-      query_ef: [10, 20, 40, 60, 100, 150, 200, 300, 400, 500]
-
-  - name: annoy
-    module: algos.annoy
-    class: Annoy
-    parameters:
-      n_trees: [100, 200, 400]
-      search_k: [1000, 2000,10000,20000]

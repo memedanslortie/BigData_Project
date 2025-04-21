@@ -4,7 +4,7 @@ import os
 
 def load_dataset(name):
     path = os.path.join("data", f"{name}.hdf5")
-    gt_path = os.path.join("data", "ground_truth.hdf5")
+    gt_path = os.path.join("data", "sift-128-euclidean.hdf5")
 
     with h5py.File(path, 'r') as f:
         xb = f['train'][:]
