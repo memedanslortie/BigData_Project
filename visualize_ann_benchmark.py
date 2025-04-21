@@ -1,357 +1,327 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import os
 import json
-import argparse
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from collections import defaultdict
 
-def parse_args():
-    """Parse les arguments pour configurer la visualisation."""
-    parser = argparse.ArgumentParser(description='Visualisation des résultats de benchmark ANN')
-    
-    parser.add_argument('--results-dir', type=str, default='results',
-                        help='Dossier contenant les résultats du benchmark')
-    
-    parser.add_argument('--dataset', type=str, required=True,
-                        help='Nom du dataset à visualiser')
-    
-    parser.add_argument('--algorithms', type=str, nargs='+', default=None,
-                        help='Algorithmes à inclure dans la visualisation')
-    
-    parser.add_argument('--output', type=str, default=None,
-                        help='Chemin pour sauvegarder l\'image générée')
-    
-    parser.add_argument('--style', type=str, default='darkgrid',
-                        choices=['darkgrid', 'whitegrid', 'dark', 'white', 'ticks'],
-                        help='Style de fond pour seaborn')
-    
-    parser.add_argument('--palette', type=str, default='colorblind',
-                        choices=['colorblind', 'deep', 'muted', 'bright', 'pastel', 'dark'],
-                        help='Palette de couleurs à utiliser')
-    
-    parser.add_argument('--metric', type=str, default='recall@10',
-                        help='Métrique de précision à utiliser')
-    
-    parser.add_argument('--alpha', type=float, default=0.8,
-                        help='Transparence des marqueurs')
-    
-    parser.add_argument('--fig-width', type=float, default=12,
-                        help='Largeur de la figure en pouces')
-    
-    parser.add_argument('--fig-height', type=float, default=8,
-                        help='Hauteur de la figure en pouces')
-    
-    parser.add_argument('--include-params', action='store_true', default=False,
-                        help='Inclure les paramètres clés dans les étiquettes')
-    
-    parser.add_argument('--highlight-best', action='store_true', default=False,
-                        help='Mettre en évidence les configurations optimales')
-    
-    parser.add_argument('--show-pareto', action='store_true', default=False,
-                        help='Montrer la frontière de Pareto')
-    
-    return parser.parse_args()
-
-def load_results(results_dir, dataset, algorithms=None):
-    """Charge les résultats de benchmark depuis les fichiers JSON."""
-    dataset_dir = os.path.join(results_dir, dataset)
-    
-    if not os.path.exists(dataset_dir):
-        raise FileNotFoundError(f"Dossier de résultats non trouvé: {dataset_dir}")
-    
-    # Collecter tous les résultats
+def plot_all_methods(result_dir="results/", dataset=None, algorithms=None, show_pareto=True):
     all_results = []
     
-    for file in os.listdir(dataset_dir):
-        if not file.endswith('.json'):
-            continue
-            
-        algo_name = file.split('.')[0]
-        if algorithms and algo_name not in algorithms:
-            continue
-            
-        try:
-            with open(os.path.join(dataset_dir, file), 'r') as f:
-                results = json.load(f)
-                
-                if isinstance(results, list):
-                    # Ajouter l'algorithme si pas déjà présent dans chaque élément
-                    for res in results:
-                        if 'algorithm' not in res:
-                            res['algorithm'] = algo_name
-                    all_results.extend(results)
-        except Exception as e:
-            print(f"Erreur lors de la lecture de {file}: {e}")
-    
-    return all_results
+    if dataset:
+        dataset_path = os.path.join(result_dir, dataset)
+        if os.path.exists(dataset_path):
+            for file in os.listdir(dataset_path):
+                if file.endswith(".json"):
+                    with open(os.path.join(dataset_path, file)) as f:
+                        try:
+                            content = json.load(f)
+                            if isinstance(content, list):
+                                all_results.extend(content)
+                        except Exception as e:
+                            print(f"Erreur dans {file} : {e}")
+    else:
+        for root, _, files in os.walk(result_dir):
+            for file in files:
+                if file.endswith(".json"):
+                    with open(os.path.join(root, file)) as f:
+                        try:
+                            content = json.load(f)
+                            if isinstance(content, list):
+                                all_results.extend(content)
+                        except Exception as e:
+                            print(f"Erreur dans {file} : {e}")
 
-def prepare_dataframe(results, recall_metric='recall@10'):
-    """Convertit les résultats en DataFrame pandas pour faciliter l'analyse."""
-    records = []
+    if algorithms:
+        all_results = [res for res in all_results if res.get("algorithm") in algorithms]
     
-    for res in results:
-        # Extraire les informations principales
-        algo = res['algorithm']
-        params = res['parameters']
-        metrics = res['metrics']
+    if not all_results:
+        print("Aucun résultat trouvé!")
+        return
+    
+    method_groups = {}
+    for res in all_results:
+        method = res["algorithm"]
+        method_groups.setdefault(method, []).append(res)
+    
+    fig = make_subplots(specs=[[{"secondary_y": False}]])
+
+    colors = [
+        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', 
+        '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
+    ]
+    
+    for i, (method, res_list) in enumerate(method_groups.items()):
+        recall_values = []
+        qps_values = []
+        hover_texts = []
         
-        # Créer un enregistrement plat
-        record = {
-            'algorithm': algo,
-            'recall': metrics.get(recall_metric, 0),
-            'qps': 1.0 / metrics.get('search_time', float('inf')),
-            'index_time': metrics.get('index_time', 0),
-        }
-        
-        # Ajouter les paramètres principaux selon l'algorithme
-        if algo == 'hnsw':
-            record.update({
-                'M': params.get('M', None),
-                'ef_construction': params.get('ef_construction', None),
-                'ef': params.get('ef', None),
-                'param_str': f"M={params.get('M', '?')}, ef={params.get('ef', '?')}"
-            })
-        elif algo == 'annoy':
-            record.update({
-                'n_trees': params.get('n_trees', None),
-                'search_k': params.get('search_k', None),
-                'param_str': f"n_trees={params.get('n_trees', '?')}, search_k={params.get('search_k', '?')}"
-            })
-        elif algo == 'faiss_flat':
-            record['param_str'] = "exact search"
-        elif algo == 'faiss_ivf':
-            record.update({
-                'nlist': params.get('nlist', None),
-                'nprobe': params.get('nprobe', None),
-                'param_str': f"nlist={params.get('nlist', '?')}, nprobe={params.get('nprobe', '?')}"
-            })
-        else:
-            # Paramètres génériques pour les autres algorithmes
-            param_str = ", ".join(f"{k}={v}" for k, v in params.items() 
-                                if k in ['M', 'ef', 'n_trees', 'search_k', 'nlist', 'nprobe'])
-            record['param_str'] = param_str if param_str else "default"
+        for res in sorted(res_list, key=lambda x: x["metrics"].get("recall@10", 0)):
+            recall = res["metrics"].get("recall@10", 0)
+            search_time = res["metrics"].get("search_time", float('inf'))
+            qps = 1 / search_time if search_time > 0 else 0
             
-        records.append(record)
-    
-    return pd.DataFrame(records)
+            param_str = ", ".join(f"{k}: {v}" for k, v in res["parameters"].items())
 
-def find_pareto_frontier(df, x_col='recall', y_col='qps'):
-    """Trouve la frontière de Pareto pour un DataFrame."""
-    df_sorted = df.sort_values(by=x_col)
-    pareto_points = []
-    current_best_y = 0
-    
-    for _, row in df_sorted.iterrows():
-        if row[y_col] > current_best_y:
-            pareto_points.append(row)
-            current_best_y = row[y_col]
-    
-    return pd.DataFrame(pareto_points)
-
-def visualize(df, args):
-    """Génère une visualisation avancée avec Seaborn."""
-    # Configurer le style
-    sns.set(style=args.style)
-    sns.set_palette(args.palette)
-    
-    # Créer la figure
-    plt.figure(figsize=(args.fig_width, args.fig_height))
-    
-    # Plot principal
-    ax = plt.subplot(111)
-    
-    # Grouper par algorithme pour les couleurs
-    for algo, group in df.groupby('algorithm'):
-        # Tracer les points et les lignes
-        sns.scatterplot(
-            data=group,
-            x='recall',
-            y='qps',
-            label=algo,
-            s=100,
-            alpha=args.alpha,
-            ax=ax
-        )
+            index_time = res["metrics"].get("index_time", "N/A")
+            if index_time != "N/A":
+                time_info = f"Index Time: {index_time:.2f}s"
+            else:
+                time_info = "Index Time: N/A"
+            
+            hover_text = (
+                f"<b>{method}</b><br>"
+                f"Recall@10: {recall:.4f}<br>"
+                f"QPS: {qps:.2f}<br>"
+                f"{time_info}<br>"
+                f"<i>Paramètres:</i><br>{param_str}"
+            )
+            
+            recall_values.append(recall)
+            qps_values.append(qps)
+            hover_texts.append(hover_text)
         
-        # Ajouter des lignes entre les points du même algorithme
-        sorted_group = group.sort_values(by='recall')
-        plt.plot(
-            sorted_group['recall'], 
-            sorted_group['qps'],
-            alpha=0.5, 
-            linewidth=1.5
-        )
-    
-    # Tracer la frontière de Pareto si demandé
-    if args.show_pareto and len(df['algorithm'].unique()) > 1:
-        pareto_df = find_pareto_frontier(df, 'recall', 'qps')
-        plt.plot(
-            pareto_df['recall'],
-            pareto_df['qps'],
-            '--',
-            color='black',
-            linewidth=1.5,
-            label='Frontière de Pareto'
-        )
-    
-    # Mettre en évidence les meilleures configurations si demandé
-    if args.highlight_best:
-        # Meilleur pour chaque algorithme par recall
-        best_recall = df.loc[df.groupby('algorithm')['recall'].idxmax()]
-        
-        # Meilleur pour chaque algorithme par QPS
-        best_qps = df.loc[df.groupby('algorithm')['qps'].idxmax()]
-        
-        # Meilleur compromis (heuristique simple: recall * log(qps))
-        df['score'] = df['recall'] * np.log(df['qps'])
-        best_compromise = df.loc[df.groupby('algorithm')['score'].idxmax()]
-        
-        # Tracer ces points
-        plt.scatter(
-            best_recall['recall'], 
-            best_recall['qps'], 
-            s=150, 
-            color='gold', 
-            edgecolors='black', 
-            zorder=10, 
-            label='Meilleur recall'
-        )
-        
-        plt.scatter(
-            best_qps['recall'], 
-            best_qps['qps'], 
-            s=150, 
-            color='lightgreen', 
-            edgecolors='black', 
-            zorder=10, 
-            label='Meilleur QPS'
-        )
-        
-        plt.scatter(
-            best_compromise['recall'], 
-            best_compromise['qps'], 
-            s=150, 
-            color='red', 
-            marker='*', 
-            edgecolors='black', 
-            zorder=10, 
-            label='Meilleur compromis'
-        )
-    
-    # Ajouter des étiquettes pour les points si demandé
-    if args.include_params:
-        for i, row in df.iterrows():
-            if row['algorithm'] == 'hnsw' and row['recall'] > 0.98:  # Exemple de filtre
-                plt.annotate(
-                    row['param_str'],
-                    (row['recall'], row['qps']),
-                    fontsize=8,
-                    alpha=0.7,
-                    xytext=(5, 5),
-                    textcoords='offset points'
+        fig.add_trace(
+            go.Scatter(
+                x=recall_values,
+                y=qps_values,
+                mode='lines+markers',
+                name=method,
+                hovertext=hover_texts,
+                hoverinfo='text',
+                marker=dict(
+                    size=10,
+                    color=colors[i % len(colors)],
+                    line=dict(width=1, color='black')
+                ),
+                line=dict(
+                    shape='spline',
+                    smoothing=0.3,
+                    color=colors[i % len(colors)]
                 )
-    
-    # Configuration esthétique
-    plt.title(f"Performance des algorithmes ANN sur {args.dataset}", fontsize=16)
-    plt.xlabel(f"Precision ({args.metric})", fontsize=14)
-    plt.ylabel("Requêtes par seconde (QPS)", fontsize=14)
-    plt.yscale('log')
-    plt.grid(True, alpha=0.3)
-    plt.xlim(max(0, df['recall'].min() - 0.05), 1.01)
-    
-    # Ajouter des lignes de grille pour les niveaux de recall courants
-    for recall_level in [0.95, 0.99, 0.999]:
-        plt.axvline(x=recall_level, linestyle='--', color='gray', alpha=0.5)
-        plt.text(
-            recall_level + 0.001, 
-            df['qps'].min() * 1.1,
-            f"{recall_level:.3f}",
-            rotation=90, 
-            verticalalignment='bottom',
-            alpha=0.7
+            )
         )
     
-    # Légende
-    plt.legend(fontsize=12, loc='upper left', bbox_to_anchor=(1, 1))
+    if show_pareto and len(method_groups) > 1:
+        all_x = []
+        all_y = []
+        for method, res_list in method_groups.items():
+            for res in res_list:
+                recall = res["metrics"].get("recall@10", 0)
+                search_time = res["metrics"].get("search_time", float('inf'))
+                qps = 1 / search_time if search_time > 0 else 0
+                all_x.append(recall)
+                all_y.append(qps)
+        
+        points = list(zip(all_x, all_y))
+        points.sort()  
+        
+        pareto_points = []
+        max_qps = 0
+        for recall, qps in points:
+            if qps > max_qps:
+                pareto_points.append((recall, qps))
+                max_qps = qps
+        
+        if pareto_points:
+            pareto_x, pareto_y = zip(*pareto_points)
+            fig.add_trace(
+                go.Scatter(
+                    x=pareto_x,
+                    y=pareto_y,
+                    mode='lines',
+                    name='Frontière de Pareto',
+                    line=dict(color='black', width=2, dash='dash'),
+                    hoverinfo='skip'
+                )
+            )
     
-    # Ajustement de la mise en page
-    plt.tight_layout()
+    dataset_title = f" sur {dataset}" if dataset else ""
+    fig.update_layout(
+        title=f"Recall vs Queries per second{dataset_title}",
+        xaxis_title="Recall@10",
+        yaxis_title="Queries per second (log scale)",
+        yaxis_type="log",
+        xaxis=dict(range=[0.0, 1.02]),
+        hovermode="closest",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ),
+        template="plotly_white",
+        margin=dict(l=80, r=80, t=100, b=80),
+        plot_bgcolor='white',
+    )
     
-    # Sauvegarder si un chemin est spécifié
-    if args.output:
-        plt.savefig(args.output, dpi=300, bbox_inches='tight')
-        print(f"Visualisation sauvegardée dans {args.output}")
+    stats_text = []
     
-    # Afficher
-    plt.show()
+    for method, res_list in method_groups.items():
+        recalls = [res["metrics"].get("recall@10", 0) for res in res_list]
+        qps_values = [1 / res["metrics"].get("search_time", float('inf')) 
+                      if res["metrics"].get("search_time", 0) > 0 else 0 
+                      for res in res_list]
+        
+        if recalls and qps_values:
+            best_recall = max(recalls)
+            best_qps = max(qps_values)
+            
+            stats_text.append(f"{method}: max recall={best_recall:.4f}, max QPS={best_qps:.0f}")
+    
+    if stats_text:
+        fig.add_annotation(
+            xref="paper",
+            yref="paper",
+            x=0,
+            y=1.08,
+            text="<br>".join(stats_text),
+            showarrow=False,
+            font=dict(size=10),
+            align="left",
+            bgcolor="rgba(255, 255, 255, 0.8)",
+            bordercolor="gray",
+            borderwidth=1,
+            borderpad=4
+        )
+    
+    fig.show()
 
-def add_efficiency_metrics(df):
-    """Ajoute des métriques d'efficacité supplémentaires."""
-    # Efficacité = recall / log(temps de construction)
-    df['build_efficiency'] = df['recall'] / np.log1p(df['index_time'])
-    
-    # Efficacité temporelle = recall * log(QPS)
-    df['time_efficiency'] = df['recall'] * np.log(df['qps'])
-    
-    # Score global = combinaison pondérée
-    df['overall_score'] = 0.7 * df['recall'] * np.log(df['qps']) + 0.3 * df['recall'] / np.log1p(df['index_time'])
-    
-    return df
 
-def print_summary(df):
-    """Imprime un résumé des résultats pour chaque algorithme."""
-    print("\n===== RÉSUMÉ DES PERFORMANCES =====")
+def list_available_datasets(result_dir="results/"):
+    if not os.path.exists(result_dir):
+        print(f"Le répertoire {result_dir} n'existe pas.")
+        return []
     
-    for algo, group in df.groupby('algorithm'):
-        print(f"\n{algo.upper()}:")
-        
-        # Configuration avec le meilleur recall
-        best_recall_idx = group['recall'].idxmax()
-        best_recall = group.loc[best_recall_idx]
-        
-        # Configuration avec le meilleur QPS
-        best_qps_idx = group['qps'].idxmax()
-        best_qps = group.loc[best_qps_idx]
-        
-        # Meilleur compromis (selon score)
-        best_overall_idx = group['overall_score'].idxmax()
-        best_overall = group.loc[best_overall_idx]
-        
-        print(f"  Meilleur recall: {best_recall['recall']:.4f} (QPS: {best_recall['qps']:.2f}, params: {best_recall['param_str']})")
-        print(f"  Meilleur QPS: {best_qps['qps']:.2f} (recall: {best_qps['recall']:.4f}, params: {best_qps['param_str']})")
-        print(f"  Meilleur compromis: recall={best_overall['recall']:.4f}, QPS={best_overall['qps']:.2f}, params: {best_overall['param_str']}")
-        
-        print(f"  Plage de recall: {group['recall'].min():.4f} - {group['recall'].max():.4f}")
-        print(f"  Plage de QPS: {group['qps'].min():.2f} - {group['qps'].max():.2f}")
-        print(f"  Temps d'indexation: {group['index_time'].min():.2f}s - {group['index_time'].max():.2f}s")
-
-def main():
-    """Fonction principale."""
-    args = parse_args()
+    datasets = [d for d in os.listdir(result_dir) 
+                if os.path.isdir(os.path.join(result_dir, d))]
     
-    try:
-        results = load_results(args.results_dir, args.dataset, args.algorithms)
+    if datasets:
+        print("Datasets disponibles:")
+        for i, dataset in enumerate(datasets, 1):
+            print(f"{i}. {dataset}")
+    else:
+        print("Aucun dataset trouvé.")
         
-        if not results:
-            print("Aucun résultat trouvé.")
-            return
+    return datasets
 
-        df = prepare_dataframe(results, args.metric)
-        df = add_efficiency_metrics(df)
+def list_available_algorithms(dataset, result_dir="results/"):
+    dataset_path = os.path.join(result_dir, dataset)
+    
+    if not os.path.exists(dataset_path):
+        print(f"Le dataset {dataset} n'existe pas.")
+        return []
+    
+    algorithms = set()
+    
+    for file in os.listdir(dataset_path):
+        if file.endswith(".json"):
+            with open(os.path.join(dataset_path, file)) as f:
+                try:
+                    content = json.load(f)
+                    if isinstance(content, list):
+                        for result in content:
+                            if "algorithm" in result:
+                                algorithms.add(result["algorithm"])
+                except Exception as e:
+                    print(f"Erreur dans {file} : {e}")
+    
+    if algorithms:
+        print(f"Algorithmes disponibles pour {dataset}:")
+        for i, algo in enumerate(sorted(algorithms), 1):
+            print(f"{i}. {algo}")
+    else:
+        print(f"Aucun algorithme trouvé pour {dataset}.")
         
-        print_summary(df)
-        visualize(df, args)
+    return sorted(algorithms)
+
+def interactive_visualization():
+    datasets = list_available_datasets()
+    
+    if not datasets:
+        print("Aucun dataset disponible.")
+        return
+    
+    dataset_choice = input("\nSélectionnez un dataset (numéro ou nom, laissez vide pour le premier): ")
+    
+    if not dataset_choice:
+        dataset = datasets[0]
+    else:
+        try:
+            idx = int(dataset_choice) - 1
+            if 0 <= idx < len(datasets):
+                dataset = datasets[idx]
+            else:
+                print(f"Numéro invalide. Utilisation du premier dataset: {datasets[0]}")
+                dataset = datasets[0]
+        except ValueError:
+            if dataset_choice in datasets:
+                dataset = dataset_choice
+            else:
+                print(f"Nom de dataset invalide. Utilisation du premier dataset: {datasets[0]}")
+                dataset = datasets[0]
+    
+    algorithms = list_available_algorithms(dataset)
+    
+    if not algorithms:
+        print(f"Aucun algorithme disponible pour {dataset}.")
+        return
+
+    print("\nOptions de visualisation:")
+    print("1. Tous les algorithmes")
+    print("2. Sélectionner un algorithme spécifique")
+    print("3. Sélectionner plusieurs algorithmes")
+    
+    viz_choice = input("\nChoisissez une option (1-3): ")
+    
+    selected_algos = None
+    
+    if viz_choice == "1":
+        selected_algos = algorithms
+    elif viz_choice == "2":
+        algo_choice = input(f"\nSélectionnez un algorithme (1-{len(algorithms)}): ")
+        try:
+            idx = int(algo_choice) - 1
+            if 0 <= idx < len(algorithms):
+                selected_algos = [algorithms[idx]]
+            else:
+                print("Numéro invalide. Visualisation de tous les algorithmes.")
+                selected_algos = algorithms
+        except ValueError:
+            if algo_choice in algorithms:
+                selected_algos = [algo_choice]
+            else:
+                print("Nom d'algorithme invalide. Visualisation de tous les algorithmes.")
+                selected_algos = algorithms
+    elif viz_choice == "3":
+        print("\nEntrez les numéros des algorithmes séparés par des espaces")
+        print("Exemple: 1 3 pour sélectionner le premier et le troisième algorithme")
+        multi_choice = input(f"Sélection (1-{len(algorithms)}): ")
         
-    except Exception as e:
-        print(f"Erreur: {e}")
+        indices = []
+        try:
+            indices = [int(i) - 1 for i in multi_choice.split()]
+            selected_algos = [algorithms[i] for i in indices if 0 <= i < len(algorithms)]
+            
+            if not selected_algos:
+                print("Sélection invalide. Visualisation de tous les algorithmes.")
+                selected_algos = algorithms
+        except ValueError:
+            print("Entrée invalide. Visualisation de tous les algorithmes.")
+            selected_algos = algorithms
+    else:
+        print("Option invalide. Visualisation de tous les algorithmes.")
+        selected_algos = algorithms
+    
+    show_pareto = True
+    if len(selected_algos) > 1:
+        pareto_choice = input("\nAfficher la frontière de Pareto? (o/n, défaut: o): ").lower()
+        show_pareto = pareto_choice != "n"
+    
+    print(f"\nVisualisation de {', '.join(selected_algos)} sur {dataset}...")
+    plot_all_methods(dataset=dataset, algorithms=selected_algos, show_pareto=show_pareto)
+
 
 if __name__ == "__main__":
-    main()
-
-
-# a la racine : python visualize_ann_benchmark.py --dataset fashion-mnist-784-euclidean --algorithms hnsw annoy --highlight-best
+    print("Bienvenue dans l'outil de visualisation des benchmarks ANN!")
+    interactive_visualization()
