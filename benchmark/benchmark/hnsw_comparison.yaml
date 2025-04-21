@@ -3,7 +3,7 @@ distance: euclidean
 k: 10
 algorithms:
   - name: hnsw
-    module: algos.hnsw
+    module: benchmark.algos.hnsw
     class: HNSW
     parameters:
       M: [8, 16, 32, 64]

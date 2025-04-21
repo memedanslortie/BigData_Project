@@ -4,7 +4,7 @@ import h5py
 import os
 
 DATASET = "fashion-mnist-784-euclidean.hdf5"
-OUTPUT = "fashion-mnist-784-euclidean-ground_truth.hdf5"
+OUTPUT = "fashion-mnist-784-euclidean_ground_truth.hdf5"
 K = 10
 
 path = os.path.join("data", DATASET)
