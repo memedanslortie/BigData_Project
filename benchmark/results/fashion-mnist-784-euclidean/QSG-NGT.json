@@ -1,0 +1,938 @@
+[
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 40,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9909699999999926,
+      "search_time": 0.0005526098489761353
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 40,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9963199999999964,
+      "search_time": 0.0025871509075164794
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 40,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9966099999999966,
+      "search_time": 0.007085107350349426
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 60,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9989499999999986,
+      "search_time": 0.0007463697910308838
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 60,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999299999999999,
+      "search_time": 0.003195078158378601
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 60,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999599999999998,
+      "search_time": 0.008392287993431091
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 80,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9995999999999996,
+      "search_time": 0.00076951162815094
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 80,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999600000000001,
+      "search_time": 0.003610246753692627
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 80,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99998,
+      "search_time": 0.008977400946617127
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 120,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99992,
+      "search_time": 0.0009205588817596435
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 120,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.004255658459663391
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 120,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.009740177559852601
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 40,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9909699999999926,
+      "search_time": 0.0006543799877166748
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 40,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9963199999999964,
+      "search_time": 0.002693872022628784
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 40,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9966099999999966,
+      "search_time": 0.5631782935857773
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 60,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9989499999999986,
+      "search_time": 0.0006438841581344604
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 60,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999299999999999,
+      "search_time": 0.003149566650390625
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 60,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999599999999998,
+      "search_time": 0.008238184690475464
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 80,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9995999999999996,
+      "search_time": 0.0007959400177001953
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 80,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999600000000001,
+      "search_time": 0.0037502187967300414
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 80,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99998,
+      "search_time": 0.009001273560523987
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 120,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99992,
+      "search_time": 0.001005638289451599
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 120,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.003972169232368469
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 120,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.009812124991416931
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 40,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9909699999999926,
+      "search_time": 0.0005319533824920654
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 40,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9963199999999964,
+      "search_time": 0.002602054762840271
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 40,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9966099999999966,
+      "search_time": 0.007055335021018982
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 60,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9989499999999986,
+      "search_time": 0.0006845425844192505
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 60,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999299999999999,
+      "search_time": 0.0032332021951675415
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 60,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999599999999998,
+      "search_time": 0.00887143521308899
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 80,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9995999999999996,
+      "search_time": 0.0008341415405273437
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 80,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999600000000001,
+      "search_time": 0.004444135499000549
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 80,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99998,
+      "search_time": 0.010942166113853454
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 120,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99992,
+      "search_time": 0.0009854785919189454
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 120,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.004143145561218262
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 120,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.010622964596748352
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 40,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9909699999999926,
+      "search_time": 0.0006472940683364868
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 40,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9963199999999964,
+      "search_time": 0.0027390552282333374
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 40,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9966099999999966,
+      "search_time": 0.007295363068580627
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 60,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9989499999999986,
+      "search_time": 0.0006579745769500732
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 60,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999299999999999,
+      "search_time": 0.0035381582498550416
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 60,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999599999999998,
+      "search_time": 0.008800468277931213
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 80,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9995999999999996,
+      "search_time": 0.00077810218334198
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 80,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999600000000001,
+      "search_time": 0.003519421672821045
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 80,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99998,
+      "search_time": 0.009261046743392945
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 120,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99992,
+      "search_time": 0.0009630886793136597
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 120,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.0041769941091537475
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 10,
+      "search_edge_size": 120,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.009687774181365967
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 40,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9909699999999926,
+      "search_time": 0.0005443445205688477
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 40,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9963199999999964,
+      "search_time": 0.0028354363441467287
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 40,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9966099999999966,
+      "search_time": 0.007395831274986267
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 60,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9989499999999986,
+      "search_time": 0.000652668809890747
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 60,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999299999999999,
+      "search_time": 0.003180309510231018
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 60,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999599999999998,
+      "search_time": 0.008420728754997253
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 80,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9995999999999996,
+      "search_time": 0.0007745621919631958
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 80,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999600000000001,
+      "search_time": 0.003677793788909912
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 80,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99998,
+      "search_time": 0.009807647585868835
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 120,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99992,
+      "search_time": 0.0009787736654281616
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 120,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.004210834383964538
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 20,
+      "search_edge_size": 120,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.010228900170326233
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 40,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9909699999999926,
+      "search_time": 0.0005336292743682861
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 40,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9963199999999964,
+      "search_time": 0.0028178197383880617
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 40,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9966099999999966,
+      "search_time": 0.007710518741607666
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 60,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9989499999999986,
+      "search_time": 0.0007137972593307495
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 60,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999299999999999,
+      "search_time": 0.003531987452507019
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 60,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999599999999998,
+      "search_time": 0.009084506511688233
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 80,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9995999999999996,
+      "search_time": 0.000841942310333252
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 80,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.9999600000000001,
+      "search_time": 0.0037346431970596314
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 80,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99998,
+      "search_time": 0.00989309892654419
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 120,
+      "epsilon": 0.1,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 0.99992,
+      "search_time": 0.0009370117664337158
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 120,
+      "epsilon": 0.3,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.0040325035572052
+    }
+  },
+  {
+    "algorithm": "QSG-NGT",
+    "parameters": {
+      "edge_size": 40,
+      "search_edge_size": 120,
+      "epsilon": 0.5,
+      "metric": "L2"
+    },
+    "metrics": {
+      "recall@10": 1.0,
+      "search_time": 0.00997356128692627
+    }
+  }
+]

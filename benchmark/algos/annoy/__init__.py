@@ -37,17 +37,6 @@ class Annoy:
         return self
         
     def query(self, xq, k, search_k=None):
-        """
-        Query the index with vectors in xq, returning k nearest neighbors for each.
-        
-        Args:
-            xq: Query vectors
-            k: Number of neighbors to return
-            search_k: Number of nodes to inspect during search (higher = more accurate but slower)
-        
-        Returns:
-            numpy.ndarray: Array of indices of nearest neighbors, shape (len(xq), k)
-        """
         if search_k is None:
             search_k = self.search_k
         
@@ -55,13 +44,9 @@ class Annoy:
         results = []
         
         for vector in xq:
-            # Convert vector to float32 to ensure compatibility
             vector = np.array(vector, dtype=np.float32)
-            # Important: Use search_k parameter for better recall
             indices = self.index.get_nns_by_vector(vector, k, search_k=search_k)
             results.append(indices)
-        
-        # Store the total search time as an attribute
         self.last_search_time = time.time() - start
         
         # Convert to numpy array

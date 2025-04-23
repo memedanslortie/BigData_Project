@@ -23,6 +23,7 @@ def plot_all_methods(result_dir="results/"):
 
     fig = go.Figure()
 
+
     for method, res_list in method_groups.items():
         recall_values = []
         qps_values = []
