@@ -1,53 +1,77 @@
-from annoy import AnnoyIndex
-import time
 import numpy as np
+import time
+from annoy import AnnoyIndex
 
 class Annoy:
-    def __init__(self, dimension=None, metric='angular', **kwargs):
+    def __init__(self, n_trees=10, search_k=-1):
+        """
+        Initialisation de l'algorithme Annoy.
+        
+        Paramètres:
+        n_trees (int): Nombre d'arbres. Plus de valeur = plus précis mais plus lent à construire
+        search_k (int): Nombre de nœuds à inspecter lors de la recherche (-1 = n_trees * n * 2)
+        """
+        self.n_trees = n_trees
+        self.search_k = search_k
         self.index = None
-        self.dimension = dimension
-        self.metric = metric
-        
-        # Get additional parameters from kwargs
-        self.n_trees = kwargs.get('n_trees', 10)
-        self.search_k = kwargs.get('search_k', -1)  # Default to -1 (auto)
-        
-        # If dimension was not provided directly, try to get it from kwargs
-        if self.dimension is None and 'dimension' in kwargs:
-            self.dimension = kwargs['dimension']
+        self.dim = None
+        self.last_search_time = 0
     
-    def fit(self, data, n_trees=None):
-        # If dimension is still None, try to infer it from the first data point
-        if self.dimension is None and len(data) > 0:
-            self.dimension = len(data[0])
+    def fit(self, X):
+        """Construire l'index Annoy à partir des données d'apprentissage."""
+        n, self.dim = X.shape
         
-        if self.dimension is None:
-            raise ValueError("Dimension must be provided either in __init__ or inferred from data")
-            
-        if n_trees is None:
-            n_trees = self.n_trees
+        # Initialisation de l'index
+        self.index = AnnoyIndex(self.dim, 'euclidean')
         
-        self.index = AnnoyIndex(self.dimension, self.metric)
+        # Ajout des points au index
+        for i, x in enumerate(X):
+            self.index.add_item(i, x.astype('float32'))
         
-        # Convert data to float32 to ensure compatibility
-        for i, vector in enumerate(data):
-            self.index.add_item(i, np.array(vector, dtype=np.float32))
-            
-        self.index.build(n_trees)
+        # Construction de l'index
+        start = time.time()
+        self.index.build(self.n_trees)
+        self.build_time = time.time() - start
+        
         return self
+    
+    def query(self, X, k):
+        """
+        Rechercher les k plus proches voisins pour chaque point de X.
         
-    def query(self, xq, k, search_k=None):
-        if search_k is None:
-            search_k = self.search_k
+        Paramètres:
+        X: données de requête de forme (n_queries, dim)
+        k: nombre de voisins à rechercher
+        
+        Retour:
+        I: indices des k plus proches voisins pour chaque requête
+        """
+        n_queries = X.shape[0]
+        I = np.zeros((n_queries, k), dtype=np.int32)
         
         start = time.time()
-        results = []
+        for i, x in enumerate(X):
+            # Recherche des k plus proches voisins
+            # search_k contrôle le compromis précision/vitesse à la recherche
+            search_k = self.search_k
+            if search_k == -1:
+                search_k = self.n_trees * X.shape[0]
+                
+            neighbors = self.index.get_nns_by_vector(
+                x.astype('float32'), k, search_k=search_k, include_distances=False)
+            I[i, :len(neighbors)] = neighbors
         
-        for vector in xq:
-            vector = np.array(vector, dtype=np.float32)
-            indices = self.index.get_nns_by_vector(vector, k, search_k=search_k)
-            results.append(indices)
         self.last_search_time = time.time() - start
         
-        # Convert to numpy array
-        return np.array(results)
+        return I
+    
+    def save(self, filename):
+        """Sauvegarder l'index dans un fichier."""
+        if self.index:
+            self.index.save(filename)
+    
+    def load(self, filename):
+        """Charger l'index depuis un fichier."""
+        if not self.index and self.dim:
+            self.index = AnnoyIndex(self.dim, 'euclidean')
+            self.index.load(filename)
