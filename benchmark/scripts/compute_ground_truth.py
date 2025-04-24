@@ -5,7 +5,7 @@ import os
 
 DATASET = "fashion-mnist-784-euclidean.hdf5"
 OUTPUT = "fashion-mnist-784-euclidean_ground_truth.hdf5"
-K = 10
+K = 100
 
 path = os.path.join("data", DATASET)
 with h5py.File(path, 'r') as f:

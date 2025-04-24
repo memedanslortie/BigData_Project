@@ -7,8 +7,8 @@
       "query_ef": 10
     },
     "metrics": {
-      "recall@10": 0.9054999999999651,
-      "search_time": 2.028381824493408e-05
+      "recall@10": 0.9050799999999656,
+      "search_time": 1.9416499137878417e-05
     }
   },
   {
@@ -19,8 +19,8 @@
       "query_ef": 20
     },
     "metrics": {
-      "recall@10": 0.9666699999999738,
-      "search_time": 3.49682092666626e-05
+      "recall@10": 0.9673199999999744,
+      "search_time": 2.9554247856140138e-05
     }
   },
   {
@@ -31,8 +31,8 @@
       "query_ef": 40
     },
     "metrics": {
-      "recall@10": 0.9883099999999888,
-      "search_time": 4.760286808013916e-05
+      "recall@10": 0.9881199999999885,
+      "search_time": 4.6559643745422365e-05
     }
   },
   {
@@ -43,8 +43,8 @@
       "query_ef": 60
     },
     "metrics": {
-      "recall@10": 0.9926699999999928,
-      "search_time": 6.661245822906494e-05
+      "recall@10": 0.9934699999999939,
+      "search_time": 6.146037578582764e-05
     }
   },
   {
@@ -55,8 +55,8 @@
       "query_ef": 100
     },
     "metrics": {
-      "recall@10": 0.9946399999999938,
-      "search_time": 8.949747085571289e-05
+      "recall@10": 0.9956599999999954,
+      "search_time": 8.655321598052979e-05
     }
   },
   {
@@ -67,8 +67,8 @@
       "query_ef": 150
     },
     "metrics": {
-      "recall@10": 0.9961699999999956,
-      "search_time": 0.0001212914228439331
+      "recall@10": 0.9952799999999936,
+      "search_time": 0.00011434164047241211
     }
   },
   {
@@ -79,8 +79,8 @@
       "query_ef": 200
     },
     "metrics": {
-      "recall@10": 0.9964699999999959,
-      "search_time": 0.00014356846809387207
+      "recall@10": 0.9971899999999967,
+      "search_time": 0.00013877203464508057
     }
   },
   {
@@ -91,8 +91,8 @@
       "query_ef": 300
     },
     "metrics": {
-      "recall@10": 0.9970199999999954,
-      "search_time": 0.00019864203929901124
+      "recall@10": 0.9976599999999968,
+      "search_time": 0.00018248293399810792
     }
   },
   {
@@ -103,8 +103,8 @@
       "query_ef": 400
     },
     "metrics": {
-      "recall@10": 0.9972399999999958,
-      "search_time": 0.0002360515832901001
+      "recall@10": 0.997649999999997,
+      "search_time": 0.0002232351064682007
     }
   },
   {
@@ -115,128 +115,8 @@
       "query_ef": 500
     },
     "metrics": {
-      "recall@10": 0.997759999999997,
-      "search_time": 0.0002859643459320068
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 10
-    },
-    "metrics": {
-      "recall@10": 0.9044999999999637,
-      "search_time": 1.9648170471191405e-05
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 20
-    },
-    "metrics": {
-      "recall@10": 0.9664199999999741,
-      "search_time": 2.986311912536621e-05
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 40
-    },
-    "metrics": {
-      "recall@10": 0.988519999999989,
-      "search_time": 4.672408103942871e-05
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 60
-    },
-    "metrics": {
-      "recall@10": 0.9927999999999927,
-      "search_time": 6.157691478729247e-05
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 100
-    },
-    "metrics": {
-      "recall@10": 0.9953099999999946,
-      "search_time": 8.683722019195557e-05
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 150
-    },
-    "metrics": {
-      "recall@10": 0.9964499999999958,
-      "search_time": 0.0001145137071609497
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 200
-    },
-    "metrics": {
-      "recall@10": 0.9969499999999963,
-      "search_time": 0.00013996732234954835
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 300
-    },
-    "metrics": {
-      "recall@10": 0.9975599999999964,
-      "search_time": 0.0001852421998977661
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 400
-    },
-    "metrics": {
-      "recall@10": 0.9977399999999974,
-      "search_time": 0.00022569305896759034
-    }
-  },
-  {
-    "algorithm": "voyager",
-    "parameters": {
-      "M": 12,
-      "ef_construction": 200,
-      "query_ef": 500
-    },
-    "metrics": {
-      "recall@10": 0.998129999999998,
-      "search_time": 0.00026190755367279053
+      "recall@10": 0.9976599999999964,
+      "search_time": 0.00025824828147888185
     }
   }
 ]

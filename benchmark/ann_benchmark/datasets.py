@@ -4,7 +4,9 @@ import os
 
 def load_dataset(name):
     # Utilisation de chemins absolus pour garantir l'accès aux fichiers
-    data_dir = "/Volumes/SSD/M1VMI/S2/big_data/benchmark/data"
+    # Utilisation de chemins relatifs pour plus de portabilité
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(script_dir, "..", "data")
     
     # Chemin vers le jeu de données
     path = os.path.join(data_dir, f"{name}.hdf5")
