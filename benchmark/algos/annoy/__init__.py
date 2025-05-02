@@ -52,7 +52,6 @@ class Annoy:
         start = time.time()
         for i, x in enumerate(X):
             # Recherche des k plus proches voisins
-            # search_k contrôle le compromis précision/vitesse à la recherche
             search_k = self.search_k
             if search_k == -1:
                 search_k = self.n_trees * X.shape[0]

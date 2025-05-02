@@ -3,8 +3,8 @@ import numpy as np
 import h5py
 import os
 
-DATASET = "fashion-mnist-784-euclidean.hdf5"
-OUTPUT = "fashion-mnist-784-euclidean_ground_truth.hdf5"
+DATASET = "sift-128-euclidean.hdf5"
+OUTPUT = "sift-128-euclidean_ground_truth.hdf5"
 K = 100
 
 path = os.path.join("data", DATASET)

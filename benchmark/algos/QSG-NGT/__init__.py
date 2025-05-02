@@ -56,7 +56,7 @@ class QSGNGT:
             dimension=self.dimension,
             edge_size_for_creation=self.creation_edge_size,
             edge_size_for_search=self.search_edge_size,
-            distance_type=self.metric.upper(),  # 'L2' or 'Cosine' - NGT préfère les majuscules
+            distance_type=self.metric.upper(), 
             object_type='Float'
         )
         
@@ -65,7 +65,7 @@ class QSGNGT:
         
         # Insert all vectors with batch insertion
         for i, vector in enumerate(xb):
-            self.index.insert(vector.astype(np.float32))  # Assurez-vous que les vecteurs sont en float32
+            self.index.insert(vector.astype(np.float32)) 
         
         # Build the index
         self.index.build_index()

@@ -1,0 +1,1346 @@
+[
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.6211099999999973,
+      "search_time": 1.0110712051391602e-05,
+      "index_time": 49.656383991241455,
+      "qps": 98905.00242882138
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.7643299999999877,
+      "search_time": 1.4654207229614257e-05,
+      "index_time": 48.10208582878113,
+      "qps": 68239.78836460899
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.868419999999971,
+      "search_time": 2.3459625244140625e-05,
+      "index_time": 47.40310573577881,
+      "qps": 42626.42687567075
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9347399999999599,
+      "search_time": 3.850860595703125e-05,
+      "index_time": 47.49926233291626,
+      "qps": 25968.221262432144
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9576899999999642,
+      "search_time": 5.5491089820861816e-05,
+      "index_time": 47.755425214767456,
+      "qps": 18020.911163003526
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9752099999999689,
+      "search_time": 8.364217281341552e-05,
+      "index_time": 48.02650594711304,
+      "qps": 11955.691326081957
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9849999999999757,
+      "search_time": 0.00015470609664916993,
+      "index_time": 47.43793487548828,
+      "qps": 6463.8693733429245
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9882899999999796,
+      "search_time": 0.00028775770664215086,
+      "index_time": 47.27631092071533,
+      "qps": 3475.1458498506104
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.6404300000000003,
+      "search_time": 1.020059585571289e-05,
+      "index_time": 86.0711121559143,
+      "qps": 98033.48884172736
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.7801799999999867,
+      "search_time": 1.5198707580566406e-05,
+      "index_time": 86.02838206291199,
+      "qps": 65795.06808056723
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.8860799999999699,
+      "search_time": 2.3555302619934083e-05,
+      "index_time": 86.167001247406,
+      "qps": 42453.28604497455
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.950379999999965,
+      "search_time": 4.04242753982544e-05,
+      "index_time": 85.03390002250671,
+      "qps": 24737.61100596455
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9713099999999724,
+      "search_time": 5.523457527160645e-05,
+      "index_time": 84.96599507331848,
+      "qps": 18104.601965031383
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9844899999999798,
+      "search_time": 8.540341854095459e-05,
+      "index_time": 85.21047401428223,
+      "qps": 11709.133159821433
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9919799999999864,
+      "search_time": 0.00015675230026245118,
+      "index_time": 85.08867311477661,
+      "qps": 6379.491709695455
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.99479999999999,
+      "search_time": 0.00029380791187286377,
+      "index_time": 83.44816374778748,
+      "qps": 3403.5843133888065
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.6453099999999993,
+      "search_time": 9.321713447570801e-06,
+      "index_time": 152.8044810295105,
+      "qps": 107276.41496645617
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.7856599999999865,
+      "search_time": 1.4043974876403808e-05,
+      "index_time": 151.9290030002594,
+      "qps": 71204.91234146002
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.891729999999971,
+      "search_time": 2.4422311782836915e-05,
+      "index_time": 153.17429304122925,
+      "qps": 40946.16467482667
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9541999999999689,
+      "search_time": 3.873898983001709e-05,
+      "index_time": 152.2951261997223,
+      "qps": 25813.78617222345
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9745499999999756,
+      "search_time": 5.498166084289551e-05,
+      "index_time": 153.0930700302124,
+      "qps": 18187.882735252362
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9878099999999836,
+      "search_time": 8.535270690917969e-05,
+      "index_time": 152.3818519115448,
+      "qps": 11716.090048134723
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9945499999999913,
+      "search_time": 0.0001582308053970337,
+      "index_time": 152.0446810722351,
+      "qps": 6319.881880717184
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9963999999999933,
+      "search_time": 0.0002962969064712524,
+      "index_time": 151.19835209846497,
+      "qps": 3374.9930497402033
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.6736799999999915,
+      "search_time": 1.0252523422241211e-05,
+      "index_time": 50.44110298156738,
+      "qps": 97536.96322513731
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.806529999999979,
+      "search_time": 1.5393590927124023e-05,
+      "index_time": 50.701380252838135,
+      "qps": 64962.100443891
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9009099999999683,
+      "search_time": 2.4787187576293946e-05,
+      "index_time": 50.654239892959595,
+      "qps": 40343.423267445774
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.956329999999967,
+      "search_time": 4.272780418395996e-05,
+      "index_time": 50.70392394065857,
+      "qps": 23403.964212497503
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9739999999999727,
+      "search_time": 6.10368013381958e-05,
+      "index_time": 50.50240206718445,
+      "qps": 16383.55841190218
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9844599999999791,
+      "search_time": 9.60782766342163e-05,
+      "index_time": 50.92925477027893,
+      "qps": 10408.180028115436
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9895099999999828,
+      "search_time": 0.00017266700267791748,
+      "index_time": 51.44549918174744,
+      "qps": 5791.494521193138
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9927699999999875,
+      "search_time": 0.0003219348907470703,
+      "index_time": 50.7760226726532,
+      "qps": 3106.218147649162
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.6915899999999944,
+      "search_time": 1.0676789283752442e-05,
+      "index_time": 97.48687291145325,
+      "qps": 93661.11603623802
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8220399999999801,
+      "search_time": 1.6310811042785643e-05,
+      "index_time": 96.41145205497742,
+      "qps": 61309.02978256898
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.916299999999968,
+      "search_time": 2.6491594314575195e-05,
+      "index_time": 97.02308797836304,
+      "qps": 37747.82250269544
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.96648999999997,
+      "search_time": 4.553909301757812e-05,
+      "index_time": 96.96298027038574,
+      "qps": 21959.154953173955
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9815399999999772,
+      "search_time": 6.390838623046875e-05,
+      "index_time": 97.33051896095276,
+      "qps": 15647.39870591887
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9911599999999873,
+      "search_time": 0.00010175111293792725,
+      "index_time": 97.69713091850281,
+      "qps": 9827.902330759222
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9928599999999879,
+      "search_time": 0.00019655380249023437,
+      "index_time": 97.04390001296997,
+      "qps": 5087.665500898586
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9945499999999904,
+      "search_time": 0.00033927149772644045,
+      "index_time": 96.80180811882019,
+      "qps": 2947.4919252023774
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.6956599999999916,
+      "search_time": 1.119980812072754e-05,
+      "index_time": 179.52686500549316,
+      "qps": 89287.24396173315
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8278199999999794,
+      "search_time": 1.7079806327819825e-05,
+      "index_time": 180.1231029033661,
+      "qps": 58548.67325814966
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9199799999999679,
+      "search_time": 2.6744604110717773e-05,
+      "index_time": 180.79837489128113,
+      "qps": 37390.71985736572
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9703299999999717,
+      "search_time": 4.6960783004760745e-05,
+      "index_time": 180.76793003082275,
+      "qps": 21294.36385033493
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9849499999999817,
+      "search_time": 6.57494068145752e-05,
+      "index_time": 179.1657350063324,
+      "qps": 15209.262690691256
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9929499999999889,
+      "search_time": 0.00010844957828521728,
+      "index_time": 179.98680996894836,
+      "qps": 9220.874952321596
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9955799999999919,
+      "search_time": 0.0001904865026473999,
+      "index_time": 179.30257487297058,
+      "qps": 5249.715786168064
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9957499999999921,
+      "search_time": 0.00034819672107696533,
+      "index_time": 180.29891777038574,
+      "qps": 2871.939738280764
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.702289999999989,
+      "search_time": 1.1994290351867675e-05,
+      "index_time": 57.34703516960144,
+      "qps": 83373.00254235436
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8304099999999749,
+      "search_time": 1.817500591278076e-05,
+      "index_time": 57.35370492935181,
+      "qps": 55020.614837698326
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9130699999999622,
+      "search_time": 3.0254101753234865e-05,
+      "index_time": 58.285675048828125,
+      "qps": 33053.36936315013
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9622599999999658,
+      "search_time": 4.978189468383789e-05,
+      "index_time": 57.44042897224426,
+      "qps": 20087.624353210053
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9760999999999705,
+      "search_time": 7.000100612640381e-05,
+      "index_time": 56.961050033569336,
+      "qps": 14285.508956746382
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9846199999999755,
+      "search_time": 0.00010818438529968261,
+      "index_time": 57.36468505859375,
+      "qps": 9243.478134389637
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9925599999999879,
+      "search_time": 0.0001969654083251953,
+      "index_time": 55.92260694503784,
+      "qps": 5077.0336197763845
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.989989999999983,
+      "search_time": 0.0003604194164276123,
+      "index_time": 57.221697092056274,
+      "qps": 2774.545305887656
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.7366699999999908,
+      "search_time": 1.2780880928039552e-05,
+      "index_time": 112.42976403236389,
+      "qps": 78241.86811772364
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8596899999999726,
+      "search_time": 1.9556307792663573e-05,
+      "index_time": 113.66855382919312,
+      "qps": 51134.39666638627
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9398999999999638,
+      "search_time": 3.268978595733642e-05,
+      "index_time": 112.34064984321594,
+      "qps": 30590.594912585362
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9766899999999751,
+      "search_time": 5.545909404754639e-05,
+      "index_time": 116.09228491783142,
+      "qps": 18031.3078887058
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9876399999999834,
+      "search_time": 7.857236862182617e-05,
+      "index_time": 115.01345992088318,
+      "qps": 12727.12045646815
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9914899999999863,
+      "search_time": 0.00012073819637298583,
+      "index_time": 114.35777616500854,
+      "qps": 8282.383123488018
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9953499999999907,
+      "search_time": 0.00022073819637298585,
+      "index_time": 112.37025475502014,
+      "qps": 4530.25356024147
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9940199999999891,
+      "search_time": 0.0004083534955978394,
+      "index_time": 114.07016110420227,
+      "qps": 2448.858674604893
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.7506499999999884,
+      "search_time": 1.3694310188293457e-05,
+      "index_time": 216.62800097465515,
+      "qps": 73023.02826869274
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8709099999999708,
+      "search_time": 2.189621925354004e-05,
+      "index_time": 219.91026496887207,
+      "qps": 45669.98477777512
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9479699999999646,
+      "search_time": 3.415999412536621e-05,
+      "index_time": 218.9343249797821,
+      "qps": 29274.009718210968
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9824799999999797,
+      "search_time": 5.984361171722412e-05,
+      "index_time": 219.48307371139526,
+      "qps": 16710.221380441533
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9910699999999871,
+      "search_time": 8.546478748321534e-05,
+      "index_time": 218.47626280784607,
+      "qps": 11700.725286380579
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.994879999999991,
+      "search_time": 0.00014154210090637208,
+      "index_time": 218.70585703849792,
+      "qps": 7065.035728567323
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9961099999999926,
+      "search_time": 0.00023449299335479736,
+      "index_time": 218.13284611701965,
+      "qps": 4264.519744037552
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9968699999999939,
+      "search_time": 0.00043232460021972656,
+      "index_time": 218.0502941608429,
+      "qps": 2313.076793436588
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.7149799999999897,
+      "search_time": 1.2800168991088868e-05,
+      "index_time": 60.29817485809326,
+      "qps": 78123.96857386595
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8394899999999729,
+      "search_time": 2.0036196708679198e-05,
+      "index_time": 59.18903589248657,
+      "qps": 49909.671707646194
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9238699999999641,
+      "search_time": 3.11147928237915e-05,
+      "index_time": 58.791603803634644,
+      "qps": 32139.053782654904
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9644199999999657,
+      "search_time": 5.4509997367858884e-05,
+      "index_time": 59.546234130859375,
+      "qps": 18345.258636714538
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.978159999999974,
+      "search_time": 7.467830181121826e-05,
+      "index_time": 59.38548517227173,
+      "qps": 13390.7704881658
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9881599999999815,
+      "search_time": 0.0001163621187210083,
+      "index_time": 59.30938386917114,
+      "qps": 8593.862083223288
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9909799999999839,
+      "search_time": 0.00021057820320129396,
+      "index_time": 58.61252212524414,
+      "qps": 4748.8295787389225
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9923999999999858,
+      "search_time": 0.0003791719913482666,
+      "index_time": 58.95240497589111,
+      "qps": 2637.3256010924806
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.7573499999999869,
+      "search_time": 1.4025020599365235e-05,
+      "index_time": 120.58790493011475,
+      "qps": 71301.14304753745
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8724699999999679,
+      "search_time": 2.2527694702148437e-05,
+      "index_time": 120.8876621723175,
+      "qps": 44389.80611294556
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.946159999999966,
+      "search_time": 3.587489128112793e-05,
+      "index_time": 121.55863618850708,
+      "qps": 27874.64893380882
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9797699999999758,
+      "search_time": 6.141188144683838e-05,
+      "index_time": 121.4581708908081,
+      "qps": 16283.493950037288
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9892499999999856,
+      "search_time": 8.629071712493897e-05,
+      "index_time": 120.41420578956604,
+      "qps": 11588.732059696707
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9933699999999893,
+      "search_time": 0.0001329450845718384,
+      "index_time": 121.20876407623291,
+      "qps": 7521.90277076125
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9947999999999896,
+      "search_time": 0.00024139180183410644,
+      "index_time": 121.10523891448975,
+      "qps": 4142.642759207033
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9958599999999924,
+      "search_time": 0.00042648377418518066,
+      "index_time": 119.68807101249695,
+      "qps": 2344.755089242379
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 10
+    },
+    "metrics": {
+      "recall@10": 0.7731499999999891,
+      "search_time": 1.546437740325928e-05,
+      "index_time": 237.20782709121704,
+      "qps": 64664.7436184039
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 20
+    },
+    "metrics": {
+      "recall@10": 0.8893199999999665,
+      "search_time": 2.3758816719055177e-05,
+      "index_time": 239.09164094924927,
+      "qps": 42089.63820988503
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 40
+    },
+    "metrics": {
+      "recall@10": 0.9577799999999684,
+      "search_time": 4.007418155670166e-05,
+      "index_time": 238.4476809501648,
+      "qps": 24953.722350762982
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 80
+    },
+    "metrics": {
+      "recall@10": 0.9864499999999825,
+      "search_time": 6.837770938873291e-05,
+      "index_time": 241.57954478263855,
+      "qps": 14624.649011199215
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 120
+    },
+    "metrics": {
+      "recall@10": 0.9925899999999878,
+      "search_time": 9.637269973754883e-05,
+      "index_time": 240.40446996688843,
+      "qps": 10376.38255152438
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 200
+    },
+    "metrics": {
+      "recall@10": 0.9956999999999933,
+      "search_time": 0.0001482069969177246,
+      "index_time": 240.06676197052002,
+      "qps": 6747.319767602729
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 400
+    },
+    "metrics": {
+      "recall@10": 0.9968599999999945,
+      "search_time": 0.0002655261993408203,
+      "index_time": 239.55523562431335,
+      "qps": 3766.1067061651206
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 800
+    },
+    "metrics": {
+      "recall@10": 0.9968999999999941,
+      "search_time": 0.0004712498903274536,
+      "index_time": 240.14359998703003,
+      "qps": 2122.0164089696405
+    }
+  }
+]

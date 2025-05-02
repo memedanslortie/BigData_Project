@@ -7,10 +7,24 @@ import numpy as np
 import importlib
 from collections import defaultdict
 import matplotlib.pyplot as plt
+import concurrent.futures
+import multiprocessing
+import logging
+from tqdm import tqdm
+import faiss
 
-# Import des fonctions utiles depuis le framework de benchmark existant
 from benchmark.ann_benchmark.datasets import load_dataset
 from benchmark.ann_benchmark.evaluation import evaluate
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("benchmark.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 def parse_args():
     """Parse les arguments en ligne de commande pour configurer le benchmark."""
@@ -34,6 +48,15 @@ def parse_args():
     parser.add_argument('--visualize', action='store_true', default=False,
                         help='Générer et afficher la visualisation après le benchmark')
     
+    parser.add_argument('--parallel', type=str, choices=['none', 'inner', 'outer', 'both'], default='both',
+                       help='Type de parallélisation: none=aucune, inner=threads internes, outer=processes parallèles, both=les deux')
+    
+    parser.add_argument('--max-workers', type=int, default=None,
+                       help='Nombre maximum de workers pour la parallélisation externe (default: CPU count - 1)')
+    
+    parser.add_argument('--inner-threads', type=int, default=None,
+                       help='Nombre de threads pour la parallélisation interne de chaque algo (default: dépend de parallel mode)')
+    
     return parser.parse_args()
 
 def load_config(config_path):
@@ -42,7 +65,7 @@ def load_config(config_path):
         with open(config_path, 'r') as f:
             return yaml.safe_load(f)
     except Exception as e:
-        print(f"Erreur lors du chargement de la configuration: {e}")
+        logger.error(f"Erreur lors du chargement de la configuration: {e}")
         return None
 
 def filter_algorithms(config, selected_algos):
@@ -56,7 +79,7 @@ def filter_algorithms(config, selected_algos):
             filtered_algos.append(algo)
             
     if not filtered_algos:
-        print(f"Aucun des algorithmes spécifiés ({', '.join(selected_algos)}) n'a été trouvé dans la configuration.")
+        logger.warning(f"Aucun des algorithmes spécifiés ({', '.join(selected_algos)}) n'a été trouvé dans la configuration.")
         return config['algorithms']
         
     return filtered_algos
@@ -80,22 +103,27 @@ def save_result(output_dir, dataset, algo_name, params, metrics):
         "metrics": metrics
     }
 
-    # Charger les résultats existants s'ils existent
-    if os.path.exists(output_path):
-        with open(output_path, 'r') as f:
-            try:
-                data = json.load(f)
-            except json.JSONDecodeError:
-                data = []
-    else:
-        data = []
 
-    # Ajouter le nouveau résultat
-    data.append(record)
+    import filelock
+    lock_path = output_path + ".lock"
+    
+    with filelock.FileLock(lock_path):
+        # Charger les résultats existants s'ils existent
+        if os.path.exists(output_path):
+            with open(output_path, 'r') as f:
+                try:
+                    data = json.load(f)
+                except json.JSONDecodeError:
+                    data = []
+        else:
+            data = []
 
-    # Sauvegarder les résultats
-    with open(output_path, 'w') as f:
-        json.dump(data, f, indent=2)
+        # Ajouter le nouveau résultat
+        data.append(record)
+
+        # Sauvegarder les résultats
+        with open(output_path, 'w') as f:
+            json.dump(data, f, indent=2)
         
     return output_path
 
@@ -103,23 +131,23 @@ def visualize_results(output_dir, dataset):
     """Génère un graphique comparant les performances des différents algorithmes."""
     dataset_dir = os.path.join(output_dir, dataset)
     if not os.path.exists(dataset_dir):
-        print(f"Dossier de résultats non trouvé: {dataset_dir}")
+        logger.warning(f"Dossier de résultats non trouvé: {dataset_dir}")
         return
         
     # Collecter tous les résultats
     all_results = []
     for file in os.listdir(dataset_dir):
-        if file.endswith('.json'):
+        if file.endswith('.json') and not file.endswith('.lock'):
             try:
                 with open(os.path.join(dataset_dir, file), 'r') as f:
                     results = json.load(f)
                     if isinstance(results, list):
                         all_results.extend(results)
             except Exception as e:
-                print(f"Erreur lors de la lecture de {file}: {e}")
+                logger.error(f"Erreur lors de la lecture de {file}: {e}")
                 
     if not all_results:
-        print("Aucun résultat trouvé à visualiser.")
+        logger.warning("Aucun résultat trouvé à visualiser.")
         return
         
     # Organiser par algorithme
@@ -129,28 +157,101 @@ def visualize_results(output_dir, dataset):
         method_groups[method].append(res)
         
     # Créer le graphique
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(12, 8))
     
-    for method, res_list in method_groups.items():
+    markers = ['o', 's', '^', 'D', 'v', '>', '<', 'p', '*']
+    colors = plt.cm.tab10.colors
+    
+    for i, (method, res_list) in enumerate(method_groups.items()):
         # Trier par recall
-        res_list = sorted(res_list, key=lambda x: x["metrics"]["recall@10"])
+        res_list = sorted(res_list, key=lambda x: x["metrics"].get("recall@10", 0))
         
-        recalls = [res["metrics"]["recall@10"] for res in res_list]
-        qps_values = [1.0 / res["metrics"]["search_time"] for res in res_list]
+        recalls = [res["metrics"].get("recall@10", 0) for res in res_list]
+        qps_values = [1.0 / max(res["metrics"].get("search_time", 1e-6), 1e-6) for res in res_list]
         
-        plt.plot(recalls, qps_values, 'o-', label=method)
+        marker = markers[i % len(markers)]
+        color = colors[i % len(colors)]
+        plt.plot(recalls, qps_values, marker=marker, linestyle='-', color=color, label=method)
         
-    plt.title(f"Recall vs QPS pour {dataset}")
+    plt.title(f"Performance Comparison - {dataset}")
     plt.xlabel("Recall@10")
     plt.ylabel("Queries per second (log scale)")
     plt.yscale('log')
-    plt.xlim(0, 1)
+    plt.xlim(0, 1.05)
     plt.grid(True, alpha=0.3)
-    plt.legend()
+    plt.legend(loc='best')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"{dataset}_performance.png"))
-    plt.show()
+    output_path = os.path.join(output_dir, f"{dataset}_performance.png")
+    plt.savefig(output_path, dpi=300)
+    logger.info(f"Graphique sauvegardé dans {output_path}")
+    plt.close()
+
+def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_name, inner_threads):
+    """Exécute un benchmark pour une seule configuration d'algorithme."""
+    algo_name = algo_conf['name']
+    
+    # Configurer la parallélisation interne si nécessaire
+    if inner_threads is not None:
+        os.environ["OMP_NUM_THREADS"] = str(inner_threads)
+        os.environ["OPENBLAS_NUM_THREADS"] = str(inner_threads)
+        os.environ["MKL_NUM_THREADS"] = str(inner_threads)
+        # Pour FAISS
+        try:
+            faiss.omp_set_num_threads(inner_threads)
+        except:
+            pass
+    
+    try:
+        # Importer dynamiquement la classe d'algorithme
+        module = importlib.import_module(algo_conf['module'])
+        cls = getattr(module, algo_conf['class'])
+        
+        # Initialiser l'algorithme avec les paramètres
+        algo_instance = cls(**params)
+        
+        # Ajouter le nombre de threads au logger pour hnswlib
+        if hasattr(algo_instance, 'index') and hasattr(algo_instance.index, 'set_num_threads'):
+            try:
+                algo_instance.index.set_num_threads(inner_threads)
+            except:
+                pass
+        
+        # Construire l'index
+        start_time = time.time()
+        algo_instance.fit(xb)
+        index_time = time.time() - start_time
+        
+        # Exécuter les requêtes
+        I = algo_instance.query(xq, k)
+        
+        # Évaluer les résultats
+        metrics = evaluate(I, gt, k)
+        metrics["search_time"] = algo_instance.last_search_time / len(xq)  # temps moyen par requête
+        metrics["index_time"] = index_time
+        metrics["qps"] = 1.0 / metrics["search_time"]
+        
+        # Sauvegarder les résultats
+        save_path = save_result(output_dir, dataset_name, algo_conf['name'], params, metrics)
+        
+        return {
+            "algorithm": algo_name,
+            "params": params,
+            "metrics": metrics,
+            "save_path": save_path,
+            "status": "success"
+        }
+        
+    except Exception as e:
+        import traceback
+        tb = traceback.format_exc()
+        return {
+            "algorithm": algo_name,
+            "params": params,
+            "status": "error",
+            "error_message": str(e),
+            "traceback": tb
+        }
 
 def run_benchmark(config_path, args):
     """Exécute le benchmark selon la configuration spécifiée."""
@@ -166,79 +267,106 @@ def run_benchmark(config_path, args):
     # Filtrer les algorithmes si nécessaire
     algorithms = filter_algorithms(config, args.algorithms)
     
-    print(f"Exécution du benchmark pour {dataset_name} avec k={k}")
-    print(f"Algorithmes à tester: {', '.join(algo['name'] for algo in algorithms)}")
+    logger.info(f"Exécution du benchmark pour {dataset_name} avec k={k}")
+    logger.info(f"Algorithmes à tester: {', '.join(algo['name'] for algo in algorithms)}")
+    
+    # Configuration de la parallélisation
+    cpu_count = multiprocessing.cpu_count()
+    if args.parallel == 'none':
+        max_workers = 1
+        inner_threads = 1
+    elif args.parallel == 'inner':
+        max_workers = 1
+        inner_threads = args.inner_threads or cpu_count
+    elif args.parallel == 'outer':
+        max_workers = args.max_workers or (cpu_count - 1)
+        inner_threads = 1
+    else:  # 'both'
+        max_workers = args.max_workers or max(1, cpu_count // 2)
+        inner_threads = args.inner_threads or (cpu_count // max_workers)
+    
+    logger.info(f"Configuration de parallélisation: mode={args.parallel}, "
+                f"max_workers={max_workers}, inner_threads={inner_threads}")
     
     # Charger les données
     try:
         xb, xq, gt = load_dataset(dataset_name)
-        print(f"Données chargées: train={xb.shape}, test={xq.shape}, ground truth={gt.shape}")
+        logger.info(f"Données chargées: train={xb.shape}, test={xq.shape}, ground truth={gt.shape}")
     except Exception as e:
-        print(f"Erreur lors du chargement des données: {e}")
+        logger.error(f"Erreur lors du chargement des données: {e}")
         return
     
-    # Exécuter chaque algorithme avec ses configurations
+    # Préparer toutes les configurations à tester
+    all_configs = []
     for algo_conf in algorithms:
-        print(f"\nTest de {algo_conf['name']}...")
-        
-        # Importer dynamiquement la classe d'algorithme
-        try:
-            module = importlib.import_module(algo_conf['module'])
-            cls = getattr(module, algo_conf['class'])
-        except (ImportError, AttributeError) as e:
-            print(f"Erreur lors de l'importation de {algo_conf['module']}.{algo_conf['class']}: {e}")
-            continue
-        
-        # Générer toutes les combinaisons de paramètres
         param_grid = expand_grid(algo_conf['parameters'])
-        print(f"  {len(param_grid)} combinaisons de paramètres à tester")
+        logger.info(f"Algorithme {algo_conf['name']}: {len(param_grid)} combinaisons de paramètres")
         
-        # Tester chaque combinaison de paramètres
-        for i, params in enumerate(param_grid):
-            print(f"  Configuration {i+1}/{len(param_grid)}: {params}")
+        for params in param_grid:
+            all_configs.append((algo_conf, params))
+    
+    total_configs = len(all_configs)
+    logger.info(f"Total: {total_configs} configurations à tester")
+    
+    # Exécution en parallèle ou séquentielle selon le mode
+    if args.parallel in ['outer', 'both'] and max_workers > 1:
+        # Mode parallèle
+        results = []
+        with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
+            future_to_config = {
+                executor.submit(
+                    execute_single_config, 
+                    algo_conf, params, xb, xq, gt, k, args.output_dir, dataset_name, inner_threads
+                ): (algo_conf, params) 
+                for algo_conf, params in all_configs
+            }
             
-            try:
-                # Initialiser l'algorithme
-                algo = cls(**params)
-                
-                # Construire l'index
-                print("    Construction de l'index...")
-                start_time = time.time()
-                algo.fit(xb)
-                index_time = time.time() - start_time
-                print(f"    Index construit en {index_time:.2f}s")
-                
-                # Exécuter les requêtes
-                print(f"    Exécution des requêtes pour k={k}...")
-                I = algo.query(xq, k)
-                
-                # Évaluer les résultats
-                metrics = evaluate(I, gt, k)
-                metrics["search_time"] = algo.last_search_time / len(xq)  # temps moyen par requête
-                metrics["index_time"] = index_time
-                
-                print(f"    Recall@{k}: {metrics[f'recall@{k}']:.4f}, "
-                      f"QPS: {1.0/metrics['search_time']:.2f}, "
-                      f"Index time: {metrics['index_time']:.2f}s")
-                
-                # Sauvegarder les résultats
-                save_path = save_result(args.output_dir, dataset_name, algo_conf['name'], params, metrics)
-                print(f"    Résultats sauvegardés dans {save_path}")
-                
-            except Exception as e:
-                print(f"    Erreur lors du test de {algo_conf['name']} avec {params}: {e}")
+            # Afficher la progression avec tqdm
+            with tqdm(total=total_configs, desc="Configurations testées") as pbar:
+                for future in concurrent.futures.as_completed(future_to_config):
+                    algo_conf, params = future_to_config[future]
+                    try:
+                        result = future.result()
+                        if result["status"] == "success":
+                            logger.info(f"{algo_conf['name']} avec {params}: "
+                                      f"Recall@{k}={result['metrics'][f'recall@{k}']:.4f}, "
+                                      f"QPS={result['metrics']['qps']:.2f}")
+                        else:
+                            logger.error(f"{algo_conf['name']} avec {params}: ERREUR: {result['error_message']}")
+                        results.append(result)
+                    except Exception as e:
+                        logger.error(f"Exception non capturée: {e}")
+                    finally:
+                        pbar.update(1)
+    else:
+        # Mode séquentiel
+        results = []
+        for i, (algo_conf, params) in enumerate(all_configs):
+            logger.info(f"Configuration {i+1}/{total_configs}: {algo_conf['name']} avec {params}")
+            result = execute_single_config(algo_conf, params, xb, xq, gt, k, args.output_dir, dataset_name, inner_threads)
+            if result["status"] == "success":
+                logger.info(f"  Recall@{k}: {result['metrics'][f'recall@{k}']:.4f}, "
+                          f"QPS: {result['metrics']['qps']:.2f}, "
+                          f"Index time: {result['metrics']['index_time']:.2f}s")
+            else:
+                logger.error(f"  ERREUR: {result['error_message']}")
+            results.append(result)
     
-    print("\nBenchmark terminé!")
+    success_count = sum(1 for r in results if r["status"] == "success")
+    error_count = sum(1 for r in results if r["status"] == "error")
     
-    # Visualiser les résultats si demandé
+    logger.info(f"\nBenchmark terminé! {success_count} succès, {error_count} échecs sur {total_configs} configurations")
+    
     if args.visualize:
-        print("Génération de la visualisation...")
+        logger.info("Génération de la visualisation...")
         visualize_results(args.output_dir, dataset_name)
 
 if __name__ == "__main__":
+    start_time = time.time()
     args = parse_args()
     run_benchmark(args.config, args)
+    elapsed = time.time() - start_time
+    logger.info(f"Temps total d'exécution: {elapsed:.2f} secondes ({elapsed/3600:.2f} heures)")
 
 
-
-    # a la racine : python -m benchmark.scripts.benchmark --config benchmark/benchmark/hnsw_comparison.yaml --algorithms hnsw --dataset fashion-mnist-784-euclidean --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset sift-128-euclidean --parallel inner --visualize

@@ -1,19 +1,10 @@
 import numpy as np
 import time
 import hnswlib
+import multiprocessing
 
 class HNSW:
-    def __init__(self, M=16, ef_construction=200, ef=100, random_seed=42, space='l2'):
-        """
-        Initialise l'index HNSW.
-        
-        Args:
-            M: Nombre maximum de connexions par point (16 par défaut)
-            ef_construction: Taille du pool dynamique utilisé pendant la construction (200 par défaut)
-            ef: Facteur d'exploration pendant la recherche (100 par défaut)
-            random_seed: Graine aléatoire pour la reproductibilité (42 par défaut)
-            space: Type de distance ('l2' ou 'cosine' ou 'ip')
-        """
+    def __init__(self, M=16, ef_construction=200, ef=100, random_seed=42, space='l2', n_threads=None):
         self.M = M
         self.ef_construction = ef_construction
         self.ef = ef
@@ -21,14 +12,13 @@ class HNSW:
         self.space = space
         self.index = None
         self.last_search_time = 0
+        
+        if n_threads is None:
+            n_threads = multiprocessing.cpu_count()
+        self.n_threads = n_threads
+        print(f"HNSW (hnswlib) configuré pour utiliser {self.n_threads} threads")
     
     def fit(self, data):
-        """
-        Construit l'index HNSW avec les données d'entrée.
-        
-        Args:
-            data: Données d'entrée pour la construction de l'index (numpy array)
-        """
         n_samples = data.shape[0]
         dim = data.shape[1]
         
@@ -41,8 +31,14 @@ class HNSW:
             random_seed=self.random_seed
         )
         
-        # Ajouter les éléments à l'index
+        # Définir le nombre de threads pour la construction
+        self.index.set_num_threads(self.n_threads)
+        
+        start = time.time()
+        # Ajouter les éléments à l'index (étape bénéficie de la parallélisation)
         self.index.add_items(data)
+        build_time = time.time() - start
+        print(f"Index HNSW construit en {build_time:.2f}s avec {self.n_threads} threads")
         
         # Configurer le facteur d'exploration pour la recherche
         self.index.set_ef(self.ef)
@@ -50,21 +46,12 @@ class HNSW:
         return self
     
     def query(self, xq, k):
-        """
-        Effectue des requêtes de k plus proches voisins.
+        # Configurer le nombre de threads pour la recherche
+        self.index.set_num_threads(self.n_threads)
         
-        Args:
-            xq: Vecteurs de requête
-            k: Nombre de voisins à retourner
-            
-        Returns:
-            Indices des k plus proches voisins pour chaque vecteur de requête
-        """
         start = time.time()
-        
         # Recherche des plus proches voisins
         labels, _ = self.index.knn_query(xq, k=k)
-        
         self.last_search_time = time.time() - start
         
         return labels
