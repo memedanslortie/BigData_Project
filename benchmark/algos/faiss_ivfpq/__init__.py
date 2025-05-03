@@ -4,12 +4,13 @@ import time
 import os
 
 class FaissIVFPQ:
-    def __init__(self, nlist=100, m=8, nbits=8, nprobe=10, k_reorder=0, n_threads=None):
+    def __init__(self, nlist=100, m=8, nbits=8, nprobe=10, k_reorder=0, n_threads=None, metric='l2'):
         self.nlist = nlist
         self.m = m
         self.nbits = nbits
         self.nprobe = nprobe
         self.k_reorder = k_reorder
+        self.metric = metric.lower()
         self.index = None
         self.xb = None
         self.adjusted_m = None
@@ -39,13 +40,34 @@ class FaissIVFPQ:
         
         print(f"Utilisation de {self.n_threads} threads pour l'entraînement")
         
-        quantizer = faiss.IndexFlatL2(d)
+        # Sélection du bon type d'index en fonction de la métrique
+        if self.metric == 'l2' or self.metric == 'euclidean':
+            quantizer = faiss.IndexFlatL2(d)
+        elif self.metric == 'cosine' or self.metric == 'angular':
+            # Normalisation pour distance cosinus
+            xb_normalized = xb.copy()
+            faiss.normalize_L2(xb_normalized)
+            quantizer = faiss.IndexFlatIP(d)
+            self.xb_normalized = True
+        elif self.metric == 'inner_product' or self.metric == 'dot':
+            quantizer = faiss.IndexFlatIP(d)
+            self.xb_normalized = False
+        else:
+            raise ValueError(f"Métrique non supportée: {self.metric}")
+        
         self.index = faiss.IndexIVFPQ(quantizer, d, self.nlist, self.adjusted_m, self.nbits)
         
         # Parallélisation de l'entraînement
         start = time.time()
-        self.index.train(xb)
-        self.index.add(xb)
+        
+        # Normalisation si nécessaire
+        if hasattr(self, 'xb_normalized') and self.xb_normalized:
+            self.index.train(xb_normalized)
+            self.index.add(xb_normalized)
+        else:
+            self.index.train(xb)
+            self.index.add(xb)
+            
         train_time = time.time() - start
         print(f"Index construit en {train_time:.2f}s avec {self.n_threads} threads")
         
@@ -55,14 +77,31 @@ class FaissIVFPQ:
     def query(self, xq, k):
         start = time.time()
         
-        D, I = self.index.search(xq, max(k, self.k_reorder))  # chercher + que k si reorder
+        # Normaliser les requêtes si nécessaire pour cosine similarity
+        if hasattr(self, 'xb_normalized') and self.xb_normalized:
+            xq_normalized = xq.copy()
+            faiss.normalize_L2(xq_normalized)
+            D, I = self.index.search(xq_normalized, max(k, self.k_reorder))
+        else:
+            D, I = self.index.search(xq, max(k, self.k_reorder))
         
         if self.k_reorder > 0:
             from concurrent.futures import ThreadPoolExecutor
             
             def reorder_single(i):
                 candidates = self.xb[I[i]]
-                dists = np.linalg.norm(candidates - xq[i], axis=1)
+                # Choisir la bonne fonction de distance pour le reordonnancement
+                if self.metric == 'l2' or self.metric == 'euclidean':
+                    dists = np.linalg.norm(candidates - xq[i], axis=1)
+                elif self.metric == 'cosine' or self.metric == 'angular':
+                    # Normaliser pour cosine
+                    norm_candidates = candidates / np.linalg.norm(candidates, axis=1, keepdims=True)
+                    norm_query = xq[i] / np.linalg.norm(xq[i])
+                    dists = 1 - np.dot(norm_candidates, norm_query)
+                elif self.metric == 'inner_product' or self.metric == 'dot':
+                    # Distance négative pour le produit scalaire (plus grand = meilleur)
+                    dists = -np.dot(candidates, xq[i])
+                
                 topk = np.argsort(dists)[:k]
                 return I[i][topk]
             

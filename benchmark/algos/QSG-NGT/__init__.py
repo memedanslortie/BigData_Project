@@ -20,20 +20,38 @@ class QSGNGT:
         search_edge_size (int): Number of edges to explore during search
         epsilon (float): Epsilon for search expansion (higher = more accurate but slower)
         dimension (int): Vector dimension
-        metric (str): Distance metric ('L2' or 'Cosine')
+        metric (str): Distance metric ('L2', 'Cosine', etc.)
         """
         self.edge_size = edge_size
         self.creation_edge_size = creation_edge_size
         self.search_edge_size = search_edge_size
         self.epsilon = epsilon
         self.dimension = dimension
-        self.metric = metric
+        self.metric = self._convert_metric(metric)
         
         # Index path - will be created in a temp directory
         self.index_path = "qsgngt_index"
         
         # Initialize last_search_time
         self.last_search_time = 0
+    
+    def _convert_metric(self, metric):
+        """Convertit une métrique standard en métrique NGT"""
+        metric_map = {
+            'euclidean': 'L2',
+            'l2': 'L2',
+            'cosine': 'Cosine',
+            'angular': 'Cosine',
+            'normalized_l2': 'NormalizedL2',
+            'hamming': 'Hamming',
+            'jaccard': 'Jaccard',
+            'sparse_jaccard': 'SparseJaccard',
+            'angle': 'Angle',
+            'l1': 'L1',
+            'normalized_angle': 'NormalizedAngle',
+            'normalized_cosine': 'NormalizedCosine'
+        }
+        return metric_map.get(metric.upper() if metric == 'L2' else metric.lower(), 'L2')
     
     def fit(self, xb):
         """
@@ -56,7 +74,7 @@ class QSGNGT:
             dimension=self.dimension,
             edge_size_for_creation=self.creation_edge_size,
             edge_size_for_search=self.search_edge_size,
-            distance_type=self.metric.upper(), 
+            distance_type=self.metric, 
             object_type='Float'
         )
         
@@ -126,3 +144,4 @@ class QSGNGT:
                 shutil.rmtree(self.index_path)
             except:
                 pass
+

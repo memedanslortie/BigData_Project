@@ -1,5 +1,3 @@
-dataset: sift-128-euclidean
-distance: euclidean
 k: 10
 algorithms:
   - name: faiss_ivfpq

@@ -178,8 +178,8 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results"):
     
     fig.update_layout(
         title_text="Comparaison des Algorithmes ANN sur Différents Datasets - Frontières de Pareto",
-        height=400 * n_datasets + 100, 
-        width=1000,
+        height=600 * n_datasets + 100, 
+        width=1200,
         legend=dict(
             orientation="h",
             yanchor="bottom",

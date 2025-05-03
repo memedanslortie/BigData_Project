@@ -3,26 +3,43 @@ import time
 from annoy import AnnoyIndex
 
 class Annoy:
-    def __init__(self, n_trees=10, search_k=-1):
+    def __init__(self, n_trees=10, search_k=-1, metric='euclidean'):
         """
         Initialisation de l'algorithme Annoy.
         
         Paramètres:
         n_trees (int): Nombre d'arbres. Plus de valeur = plus précis mais plus lent à construire
         search_k (int): Nombre de nœuds à inspecter lors de la recherche (-1 = n_trees * n * 2)
+        metric (str): Métrique de distance ('euclidean', 'angular', 'manhattan', 'hamming', etc.)
         """
         self.n_trees = n_trees
         self.search_k = search_k
+        self.metric = self._convert_metric(metric)
         self.index = None
         self.dim = None
         self.last_search_time = 0
+    
+    def _convert_metric(self, metric):
+        """Convertit une métrique standard en métrique Annoy"""
+        metric_map = {
+            'euclidean': 'euclidean',
+            'l2': 'euclidean',
+            'cosine': 'angular',
+            'angular': 'angular',
+            'manhattan': 'manhattan',
+            'l1': 'manhattan',
+            'hamming': 'hamming',
+            'jaccard': 'hamming',  # Approximation pour Jaccard
+            'dot': 'dot'
+        }
+        return metric_map.get(metric.lower(), 'euclidean')
     
     def fit(self, X):
         """Construire l'index Annoy à partir des données d'apprentissage."""
         n, self.dim = X.shape
         
-        # Initialisation de l'index
-        self.index = AnnoyIndex(self.dim, 'euclidean')
+        # Initialisation de l'index avec la métrique appropriée
+        self.index = AnnoyIndex(self.dim, self.metric)
         
         # Ajout des points au index
         for i, x in enumerate(X):
@@ -63,14 +80,4 @@ class Annoy:
         self.last_search_time = time.time() - start
         
         return I
-    
-    def save(self, filename):
-        """Sauvegarder l'index dans un fichier."""
-        if self.index:
-            self.index.save(filename)
-    
-    def load(self, filename):
-        """Charger l'index depuis un fichier."""
-        if not self.index and self.dim:
-            self.index = AnnoyIndex(self.dim, 'euclidean')
-            self.index.load(filename)
+

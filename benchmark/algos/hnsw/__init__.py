@@ -9,7 +9,7 @@ class HNSW:
         self.ef_construction = ef_construction
         self.ef = ef
         self.random_seed = random_seed
-        self.space = space
+        self.space = self._convert_metric(space)
         self.index = None
         self.last_search_time = 0
         
@@ -18,11 +18,24 @@ class HNSW:
         self.n_threads = n_threads
         print(f"HNSW (hnswlib) configuré pour utiliser {self.n_threads} threads")
     
+    def _convert_metric(self, metric):
+        """Convertit une métrique standard en métrique hnswlib"""
+        metric_map = {
+            'euclidean': 'l2',
+            'l2': 'l2',
+            'cosine': 'cosine',
+            'angular': 'cosine',
+            'ip': 'ip',
+            'inner_product': 'ip',
+            'dot': 'ip'
+        }
+        return metric_map.get(metric.lower(), 'l2')
+    
     def fit(self, data):
         n_samples = data.shape[0]
         dim = data.shape[1]
         
-        # Initialiser l'index
+        # Initialiser l'index avec la métrique appropriée
         self.index = hnswlib.Index(space=self.space, dim=dim)
         self.index.init_index(
             max_elements=n_samples,
@@ -35,7 +48,7 @@ class HNSW:
         self.index.set_num_threads(self.n_threads)
         
         start = time.time()
-        # Ajouter les éléments à l'index (étape bénéficie de la parallélisation)
+        # Ajouter les éléments à l'index (cette étape bénéficie de la parallélisation)
         self.index.add_items(data)
         build_time = time.time() - start
         print(f"Index HNSW construit en {build_time:.2f}s avec {self.n_threads} threads")
@@ -55,3 +68,4 @@ class HNSW:
         self.last_search_time = time.time() - start
         
         return labels
+

@@ -3,18 +3,32 @@ import time
 from voyager import Index, Space
 
 class VoyagerANN:
-    def __init__(self, M=12, ef_construction=200, query_ef=100, random_seed=1):
+    def __init__(self, M=12, ef_construction=200, query_ef=100, random_seed=1, metric='euclidean'):
         self.M = M
         self.ef_construction = ef_construction
         self.query_ef = query_ef
         self.random_seed = random_seed
+        self.metric = self._convert_metric(metric)
         self.index = None
         self.last_search_time = 0
+    
+    def _convert_metric(self, metric):
+        """Convertit une métrique standard en métrique Voyager"""
+        metric_map = {
+            'euclidean': Space.Euclidean,
+            'l2': Space.Euclidean,
+            'cosine': Space.Cosine,
+            'angular': Space.Cosine,
+            'ip': Space.InnerProduct,
+            'inner_product': Space.InnerProduct,
+            'dot': Space.InnerProduct
+        }
+        return metric_map.get(metric.lower(), Space.Euclidean)
 
     def fit(self, xb):
         dim = xb.shape[1]
         self.index = Index(
-            space=Space.Euclidean,
+            space=self.metric,
             num_dimensions=dim,
             M=self.M,
             ef_construction=self.ef_construction,

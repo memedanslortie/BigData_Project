@@ -45,6 +45,9 @@ def parse_args():
     parser.add_argument('--k', type=int, default=None,
                         help='Nombre de voisins à rechercher')
     
+    parser.add_argument('--distance', type=str, default=None,
+                        help='Type de distance à utiliser (euclidean, angular, jaccard). Écrase celui du fichier YAML')
+    
     parser.add_argument('--visualize', action='store_true', default=False,
                         help='Générer et afficher la visualisation après le benchmark')
     
@@ -102,7 +105,6 @@ def save_result(output_dir, dataset, algo_name, params, metrics):
         "parameters": params,
         "metrics": metrics
     }
-
 
     import filelock
     lock_path = output_path + ".lock"
@@ -187,10 +189,118 @@ def visualize_results(output_dir, dataset):
     logger.info(f"Graphique sauvegardé dans {output_path}")
     plt.close()
 
-def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_name, inner_threads):
+def detect_distance_type(dataset_name):
+    """
+    Détecte automatiquement le type de distance en fonction du nom du dataset.
+    """
+    dataset_name = dataset_name.lower()
+    
+    # Datasets avec distance angulaire
+    if any(term in dataset_name for term in ['glove', 'angular', 'cosine', 'word2vec', 'text', 'nytimes', 
+                                           'deep', 'last.fm', 'coco-i2i', 'coco-t2i']):
+        return 'angular'
+    
+    # Datasets avec distance de Jaccard
+    if any(term in dataset_name for term in ['jaccard', 'kosarak', 'movielens']):
+        return 'jaccard'
+    
+    # Par défaut, on utilise la distance euclidienne
+    return 'euclidean'
+
+def add_metric_params(algo_conf, params, distance_type):
+    """
+    Ajoute le paramètre de métrique approprié à chaque algorithme en fonction
+    de son implémentation.
+    """
+    algo_name = algo_conf['name'].lower()
+    params_copy = params.copy()  # Créer une copie pour ne pas modifier l'original
+    
+    # Mappings pour les noms de paramètres de métrique par algorithme
+    metric_param_names = {
+        'annoy': 'metric',
+        'faiss_ivfpq': 'metric',
+        'faisshnw': 'metric',
+        'faishnsw': 'metric',
+        'hnsw': 'space',
+        'voyager': 'metric',
+        'qsg-ngt': 'metric'
+    }
+    
+    # Mappings pour les valeurs de métrique par algorithme et type de distance
+    metric_values = {
+        'annoy': {
+            'euclidean': 'euclidean',
+            'angular': 'angular',
+            'jaccard': 'hamming'  # Approximation
+        },
+        'faiss_ivfpq': {
+            'euclidean': 'l2',
+            'angular': 'cosine',
+            'jaccard': 'l2'  # Non supporté directement
+        },
+        'faisshnw': {
+            'euclidean': 'l2',
+            'angular': 'cosine',
+            'jaccard': 'l2'  # Non supporté directement
+        },
+        'faishnsw': {
+            'euclidean': 'l2',
+            'angular': 'cosine',
+            'jaccard': 'l2'  # Non supporté directement
+        },
+        'hnsw': {
+            'euclidean': 'l2',
+            'angular': 'cosine',
+            'jaccard': 'l2'  # Non supporté directement
+        },
+        'voyager': {
+            'euclidean': 'euclidean',
+            'angular': 'cosine',
+            'jaccard': 'euclidean'  # Non supporté directement
+        },
+        'qsg-ngt': {
+            'euclidean': 'L2',
+            'angular': 'Cosine',
+            'jaccard': 'Jaccard'
+        }
+    }
+    
+    # Trouver le nom d'algo qui correspond le mieux dans notre mapping
+    matching_algo = None
+    for key in metric_param_names.keys():
+        if key in algo_name:
+            matching_algo = key
+            break
+    
+    # Si l'algo est supporté, ajouter le paramètre de métrique
+    if matching_algo:
+        param_name = metric_param_names[matching_algo]
+        
+        # Si l'algorithme a une configuration spécifique pour cette distance
+        if matching_algo in metric_values and distance_type in metric_values[matching_algo]:
+            metric_value = metric_values[matching_algo][distance_type]
+            
+            # Si ce paramètre n'est pas déjà défini dans les paramètres originaux
+            if param_name not in params:
+                params_copy[param_name] = metric_value
+                logger.info(f"Ajout automatique de {param_name}={metric_value} pour {algo_name}")
+    
+    return params_copy
+
+def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_name, inner_threads, distance_type):
     """Exécute un benchmark pour une seule configuration d'algorithme."""
     algo_name = algo_conf['name']
     
+    # Ajouter le paramètre de métrique si nécessaire
+    params_with_metric = add_metric_params(algo_conf, params, distance_type)
+    
+    # Prétraitement des données en fonction de la distance
+    if distance_type == 'angular' or distance_type == 'cosine':
+        # Pour certains algorithmes sensibles aux problèmes de normalisation (notamment FAISS IVFPQ)
+        if algo_name == 'faiss_ivfpq':
+            # Forcer l'utilisation de L2 sur des vecteurs normalisés plutôt que IP directement
+            params_with_metric['metric'] = 'l2'
+            
     # Configurer la parallélisation interne si nécessaire
     if inner_threads is not None:
         os.environ["OMP_NUM_THREADS"] = str(inner_threads)
@@ -207,8 +317,8 @@ def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_
         module = importlib.import_module(algo_conf['module'])
         cls = getattr(module, algo_conf['class'])
         
-        # Initialiser l'algorithme avec les paramètres
-        algo_instance = cls(**params)
+        # Initialiser l'algorithme avec les paramètres et la métrique
+        algo_instance = cls(**params_with_metric)
         
         # Ajouter le nombre de threads au logger pour hnswlib
         if hasattr(algo_instance, 'index') and hasattr(algo_instance.index, 'set_num_threads'):
@@ -217,13 +327,28 @@ def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_
             except:
                 pass
         
-        # Construire l'index
-        start_time = time.time()
-        algo_instance.fit(xb)
-        index_time = time.time() - start_time
-        
-        # Exécuter les requêtes
-        I = algo_instance.query(xq, k)
+        # Pour la distance angulaire, on pré-normalise les vecteurs pour certains algorithmes problématiques
+        if (distance_type == 'angular' or distance_type == 'cosine') and algo_name == 'faiss_ivfpq':
+            xb_copy = xb.copy().astype(np.float32)
+            xq_copy = xq.copy().astype(np.float32)
+            faiss.normalize_L2(xb_copy)
+            faiss.normalize_L2(xq_copy)
+            
+            # Construire l'index avec des vecteurs normalisés
+            start_time = time.time()
+            algo_instance.fit(xb_copy)
+            index_time = time.time() - start_time
+            
+            # Exécuter les requêtes sur des vecteurs normalisés
+            I = algo_instance.query(xq_copy, k)
+        else:
+            # Construire l'index
+            start_time = time.time()
+            algo_instance.fit(xb)
+            index_time = time.time() - start_time
+            
+            # Exécuter les requêtes
+            I = algo_instance.query(xq, k)
         
         # Évaluer les résultats
         metrics = evaluate(I, gt, k)
@@ -232,11 +357,11 @@ def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_
         metrics["qps"] = 1.0 / metrics["search_time"]
         
         # Sauvegarder les résultats
-        save_path = save_result(output_dir, dataset_name, algo_conf['name'], params, metrics)
+        save_path = save_result(output_dir, dataset_name, algo_conf['name'], params_with_metric, metrics)
         
         return {
             "algorithm": algo_name,
-            "params": params,
+            "params": params_with_metric,
             "metrics": metrics,
             "save_path": save_path,
             "status": "success"
@@ -247,7 +372,7 @@ def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_
         tb = traceback.format_exc()
         return {
             "algorithm": algo_name,
-            "params": params,
+            "params": params_with_metric,
             "status": "error",
             "error_message": str(e),
             "traceback": tb
@@ -263,6 +388,10 @@ def run_benchmark(config_path, args):
     # Appliquer les écrasements de la ligne de commande
     dataset_name = args.dataset or config['dataset']
     k = args.k or config['k']
+    
+    # Déterminer le type de distance à utiliser
+    distance_type = args.distance or config.get('distance') or detect_distance_type(dataset_name)
+    logger.info(f"Utilisation de la distance: {distance_type}")
     
     # Filtrer les algorithmes si nécessaire
     algorithms = filter_algorithms(config, args.algorithms)
@@ -316,7 +445,7 @@ def run_benchmark(config_path, args):
             future_to_config = {
                 executor.submit(
                     execute_single_config, 
-                    algo_conf, params, xb, xq, gt, k, args.output_dir, dataset_name, inner_threads
+                    algo_conf, params, xb, xq, gt, k, args.output_dir, dataset_name, inner_threads, distance_type
                 ): (algo_conf, params) 
                 for algo_conf, params in all_configs
             }
@@ -343,7 +472,7 @@ def run_benchmark(config_path, args):
         results = []
         for i, (algo_conf, params) in enumerate(all_configs):
             logger.info(f"Configuration {i+1}/{total_configs}: {algo_conf['name']} avec {params}")
-            result = execute_single_config(algo_conf, params, xb, xq, gt, k, args.output_dir, dataset_name, inner_threads)
+            result = execute_single_config(algo_conf, params, xb, xq, gt, k, args.output_dir, dataset_name, inner_threads, distance_type)
             if result["status"] == "success":
                 logger.info(f"  Recall@{k}: {result['metrics'][f'recall@{k}']:.4f}, "
                           f"QPS: {result['metrics']['qps']:.2f}, "
@@ -369,4 +498,13 @@ if __name__ == "__main__":
     logger.info(f"Temps total d'exécution: {elapsed:.2f} secondes ({elapsed/3600:.2f} heures)")
 
 
-    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset sift-128-euclidean --parallel inner --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset lastfm-64-dot --distance angular --parallel inner --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --visualize
+
+
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms faiss_ivfpq --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms faissHSNW --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms hnsw --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms voyager --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms annoy --visualize
+    # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset lastfm-64-dot --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms QSG-NGT --visualize

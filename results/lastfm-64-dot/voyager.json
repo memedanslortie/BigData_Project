@@ -1,0 +1,1442 @@
+[
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.6323380000000461,
+      "search_time": 1.7307353019714354e-05,
+      "index_time": 16.45800805091858,
+      "qps": 57778.91043540431
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8053480000001706,
+      "search_time": 1.5391125679016113e-05,
+      "index_time": 16.906408071517944,
+      "qps": 64972.5056409211
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8897820000002267,
+      "search_time": 1.2991886138916016e-05,
+      "index_time": 17.51240587234497,
+      "qps": 76971.11791986776
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9432780000001922,
+      "search_time": 1.9974942207336426e-05,
+      "index_time": 17.50801682472229,
+      "qps": 50062.72306673902
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9687420000001344,
+      "search_time": 4.719843864440918e-05,
+      "index_time": 14.961936950683594,
+      "qps": 21187.14153944695
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.981470000000101,
+      "search_time": 6.328310489654541e-05,
+      "index_time": 15.90524411201477,
+      "qps": 15802.00594826676
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9842280000001127,
+      "search_time": 0.0001016611385345459,
+      "index_time": 16.53772211074829,
+      "qps": 9836.600439608355
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 100,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9881700000000937,
+      "search_time": 0.00021474584102630615,
+      "index_time": 17.281213760375977,
+      "qps": 4656.667599338984
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.6810560000000592,
+      "search_time": 1.570124626159668e-05,
+      "index_time": 29.80721402168274,
+      "qps": 63689.21188414688
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8283160000001859,
+      "search_time": 1.5028300285339355e-05,
+      "index_time": 29.85061502456665,
+      "qps": 66541.12447936217
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9138000000002191,
+      "search_time": 2.2656822204589844e-05,
+      "index_time": 30.31543803215027,
+      "qps": 44136.816318283985
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9561540000001914,
+      "search_time": 3.7939777374267575e-05,
+      "index_time": 31.32887101173401,
+      "qps": 26357.56109307705
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9723220000001482,
+      "search_time": 5.6977953910827634e-05,
+      "index_time": 31.5019588470459,
+      "qps": 17550.647774488934
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9852220000001017,
+      "search_time": 7.230730056762695e-05,
+      "index_time": 32.61067795753479,
+      "qps": 13829.86215983445
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9910000000000723,
+      "search_time": 0.0001475824213027954,
+      "index_time": 32.59196734428406,
+      "qps": 6775.8747361130245
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 200,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9917260000000677,
+      "search_time": 0.0003116500377655029,
+      "index_time": 32.434037923812866,
+      "qps": 3208.72735062024
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7011180000000738,
+      "search_time": 1.4432878494262695e-05,
+      "index_time": 67.05412983894348,
+      "qps": 69286.24808956275
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8416640000001845,
+      "search_time": 1.6004199981689453e-05,
+      "index_time": 67.78072881698608,
+      "qps": 62483.59812699846
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9239400000002024,
+      "search_time": 2.937089920043945e-05,
+      "index_time": 68.36689805984497,
+      "qps": 34047.30625288578
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9644940000001577,
+      "search_time": 4.402809619903564e-05,
+      "index_time": 69.11787104606628,
+      "qps": 22712.769488813447
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9806660000000936,
+      "search_time": 6.932023525238037e-05,
+      "index_time": 69.74282598495483,
+      "qps": 14425.802168143411
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.987524000000088,
+      "search_time": 8.533574104309082e-05,
+      "index_time": 70.56289482116699,
+      "qps": 11718.419360711285
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9913900000000652,
+      "search_time": 0.00018825393676757813,
+      "index_time": 70.64637112617493,
+      "qps": 5311.973907003172
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.6646140000000618,
+      "search_time": 1.333508014678955e-05,
+      "index_time": 19.599415063858032,
+      "qps": 74990.1754614315
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8187740000001718,
+      "search_time": 2.1732940673828126e-05,
+      "index_time": 18.92308807373047,
+      "qps": 46013.10126448968
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9054100000002111,
+      "search_time": 2.9030356407165528e-05,
+      "index_time": 19.11937117576599,
+      "qps": 34446.70075608067
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 12,
+      "ef_construction": 400,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9961580000000332,
+      "search_time": 0.0003475628042221069,
+      "index_time": 69.27273488044739,
+      "qps": 2877.1778448448667
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9527640000001755,
+      "search_time": 3.15285062789917e-05,
+      "index_time": 19.586212158203125,
+      "qps": 31717.328792906603
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9702700000001252,
+      "search_time": 4.76268196105957e-05,
+      "index_time": 17.78506588935852,
+      "qps": 20996.57311103609
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9802100000001233,
+      "search_time": 0.00010186820030212403,
+      "index_time": 17.494899034500122,
+      "qps": 9816.606134536267
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9839440000001184,
+      "search_time": 0.00016097362041473387,
+      "index_time": 18.628732919692993,
+      "qps": 6212.197982648281
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 100,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.986614000000104,
+      "search_time": 0.00028876090049743654,
+      "index_time": 19.28668212890625,
+      "qps": 3463.072729989902
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7083080000000886,
+      "search_time": 9.975061416625976e-06,
+      "index_time": 34.574532985687256,
+      "qps": 100250.00932157127
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8442920000001886,
+      "search_time": 2.2351579666137695e-05,
+      "index_time": 33.94874286651611,
+      "qps": 44739.567177660596
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.920968000000209,
+      "search_time": 3.2775802612304686e-05,
+      "index_time": 34.62677502632141,
+      "qps": 30510.313105942987
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9658340000001435,
+      "search_time": 5.0364580154418945e-05,
+      "index_time": 34.618290185928345,
+      "qps": 19855.223590348163
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9732600000001457,
+      "search_time": 5.87677001953125e-05,
+      "index_time": 35.15137577056885,
+      "qps": 17016.149971438957
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9839600000001113,
+      "search_time": 0.00010863617897033692,
+      "index_time": 33.92887806892395,
+      "qps": 9205.036567726207
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9899280000000773,
+      "search_time": 0.00017884113788604737,
+      "index_time": 35.21009802818298,
+      "qps": 5591.554671482645
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 200,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.99159400000007,
+      "search_time": 0.0003603437995910645,
+      "index_time": 35.19199204444885,
+      "qps": 2775.127534135035
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7275120000000896,
+      "search_time": 1.3900074958801269e-05,
+      "index_time": 72.47304177284241,
+      "qps": 71942.05807982486
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8540220000001867,
+      "search_time": 2.3544435501098634e-05,
+      "index_time": 73.02445888519287,
+      "qps": 42472.880692057275
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9280660000002047,
+      "search_time": 3.229369640350342e-05,
+      "index_time": 73.05861496925354,
+      "qps": 30965.795538088787
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9685400000001413,
+      "search_time": 5.204652309417724e-05,
+      "index_time": 73.22499394416809,
+      "qps": 19213.579323839138
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9802640000001094,
+      "search_time": 7.633430004119873e-05,
+      "index_time": 72.73877477645874,
+      "qps": 13100.27077552667
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9874560000000934,
+      "search_time": 0.00011375033855438232,
+      "index_time": 72.85072898864746,
+      "qps": 8791.182625992054
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.6860800000000694,
+      "search_time": 1.0661983489990234e-05,
+      "index_time": 21.705125093460083,
+      "qps": 93791.17881197506
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.990164000000082,
+      "search_time": 0.00019362802028656005,
+      "index_time": 73.4090838432312,
+      "qps": 5164.541777166593
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8301960000001748,
+      "search_time": 1.9260478019714356e-05,
+      "index_time": 20.041279315948486,
+      "qps": 51919.791345595615
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9018140000002213,
+      "search_time": 2.26507568359375e-05,
+      "index_time": 20.250447034835815,
+      "qps": 44148.63517555442
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9532920000001727,
+      "search_time": 5.1383137702941896e-05,
+      "index_time": 19.71437096595764,
+      "qps": 19461.637508033025
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 16,
+      "ef_construction": 400,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9936340000000533,
+      "search_time": 0.000358523645401001,
+      "index_time": 72.15420508384705,
+      "qps": 2789.2163120274017
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9690160000001378,
+      "search_time": 5.999797344207764e-05,
+      "index_time": 18.041078090667725,
+      "qps": 16667.22961843712
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9775780000001426,
+      "search_time": 8.057833671569824e-05,
+      "index_time": 18.442755222320557,
+      "qps": 12410.283467729862
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9849880000001076,
+      "search_time": 0.00019638976097106933,
+      "index_time": 18.84203290939331,
+      "qps": 5091.9151541067995
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 100,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9931220000000546,
+      "search_time": 0.0003498850774765015,
+      "index_time": 19.647114753723145,
+      "qps": 2858.0813083323355
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7177160000000874,
+      "search_time": 1.5890297889709474e-05,
+      "index_time": 37.16470503807068,
+      "qps": 62931.4822755839
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8516380000002023,
+      "search_time": 1.903925895690918e-05,
+      "index_time": 37.31757211685181,
+      "qps": 52523.05261792286
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9251640000002087,
+      "search_time": 3.3187718391418455e-05,
+      "index_time": 37.21573305130005,
+      "qps": 30131.628459839405
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9646020000001593,
+      "search_time": 5.391322135925293e-05,
+      "index_time": 37.098628997802734,
+      "qps": 18548.325898325747
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9691480000001766,
+      "search_time": 6.568889617919922e-05,
+      "index_time": 37.72666811943054,
+      "qps": 15223.27300601918
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.985442000000096,
+      "search_time": 9.580250263214111e-05,
+      "index_time": 38.04839110374451,
+      "qps": 10438.140680309394
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9903520000000771,
+      "search_time": 0.00021679299831390381,
+      "index_time": 36.85180187225342,
+      "qps": 4612.6950952173165
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 200,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9916060000000683,
+      "search_time": 0.00038630218505859376,
+      "index_time": 37.644558906555176,
+      "qps": 2588.647019556261
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7431360000001042,
+      "search_time": 1.2273921966552734e-05,
+      "index_time": 77.33059096336365,
+      "qps": 81473.55040426912
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8649580000002066,
+      "search_time": 1.858883857727051e-05,
+      "index_time": 77.68619585037231,
+      "qps": 53795.72240853979
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9375060000001976,
+      "search_time": 3.0738759040832517e-05,
+      "index_time": 78.06651210784912,
+      "qps": 32532.217669282865
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9724360000001345,
+      "search_time": 5.885760307312012e-05,
+      "index_time": 78.67205286026001,
+      "qps": 16990.158412629844
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9807840000001159,
+      "search_time": 8.176310062408447e-05,
+      "index_time": 79.09355115890503,
+      "qps": 12230.455943661167
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.988554000000082,
+      "search_time": 0.00011492924213409424,
+      "index_time": 79.76606488227844,
+      "qps": 8701.00577913187
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.6669440000000624,
+      "search_time": 1.851060390472412e-05,
+      "index_time": 22.407485961914062,
+      "qps": 54023.0888817619
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8319880000001795,
+      "search_time": 2.0343246459960938e-05,
+      "index_time": 22.689903020858765,
+      "qps": 49156.36262718316
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.992078000000058,
+      "search_time": 0.0002065143060684204,
+      "index_time": 79.04673290252686,
+      "qps": 4842.279544879033
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9123000000002076,
+      "search_time": 3.3299045562744144e-05,
+      "index_time": 21.166953086853027,
+      "qps": 30030.890768798086
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9522100000001668,
+      "search_time": 5.235347747802734e-05,
+      "index_time": 21.63203525543213,
+      "qps": 19100.927926319662
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9680120000001613,
+      "search_time": 5.370502471923828e-05,
+      "index_time": 22.617754697799683,
+      "qps": 18620.231630612743
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 24,
+      "ef_construction": 400,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9946600000000445,
+      "search_time": 0.0003866839599609375,
+      "index_time": 76.67489624023438,
+      "qps": 2586.091236111835
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9810440000001133,
+      "search_time": 0.0001127440595626831,
+      "index_time": 19.91862392425537,
+      "qps": 8869.64691424849
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9845040000001049,
+      "search_time": 0.0001958374834060669,
+      "index_time": 20.030394077301025,
+      "qps": 5106.274767259498
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 100,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9876940000001012,
+      "search_time": 0.0003670807790756226,
+      "index_time": 20.912991285324097,
+      "qps": 2724.196027147445
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7215460000000875,
+      "search_time": 1.3418841361999511e-05,
+      "index_time": 38.60415196418762,
+      "qps": 74522.08227394919
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8506260000001931,
+      "search_time": 2.1663622856140138e-05,
+      "index_time": 38.35875105857849,
+      "qps": 46160.33092159233
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9308560000001924,
+      "search_time": 3.441109657287598e-05,
+      "index_time": 38.089993953704834,
+      "qps": 29060.39329151268
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9628200000001679,
+      "search_time": 5.359221935272217e-05,
+      "index_time": 38.31453895568848,
+      "qps": 18659.425044863456
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9772800000001232,
+      "search_time": 5.824673652648926e-05,
+      "index_time": 39.27247905731201,
+      "qps": 17168.343835799682
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.984828000000104,
+      "search_time": 0.00011456928253173829,
+      "index_time": 38.00087094306946,
+      "qps": 8728.343041888014
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9905140000000778,
+      "search_time": 0.0002095270013809204,
+      "index_time": 38.09640407562256,
+      "qps": 4772.654566759147
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 200,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9943960000000459,
+      "search_time": 0.00039388070106506347,
+      "index_time": 39.61016511917114,
+      "qps": 2538.8397991980173
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 10,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.7371420000001034,
+      "search_time": 1.7080278396606447e-05,
+      "index_time": 78.56885981559753,
+      "qps": 58547.055076027485
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 20,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.8637020000001958,
+      "search_time": 2.312324047088623e-05,
+      "index_time": 79.16536116600037,
+      "qps": 43246.53377449712
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 40,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9337920000002038,
+      "search_time": 3.406291961669922e-05,
+      "index_time": 79.60202598571777,
+      "qps": 29357.436510220745
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 80,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9695280000001464,
+      "search_time": 8.437940597534179e-05,
+      "index_time": 81.05563426017761,
+      "qps": 11851.232992707133
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 120,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9813040000001052,
+      "search_time": 8.162674427032471e-05,
+      "index_time": 85.14043688774109,
+      "qps": 12250.8867521199
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 200,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9883520000000844,
+      "search_time": 9.348527908325195e-05,
+      "index_time": 82.97841000556946,
+      "qps": 10696.871312856269
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 400,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9925280000000639,
+      "search_time": 0.00011328135967254639,
+      "index_time": 73.45812511444092,
+      "qps": 8827.57766053146
+    }
+  },
+  {
+    "algorithm": "voyager",
+    "parameters": {
+      "M": 32,
+      "ef_construction": 400,
+      "query_ef": 800,
+      "metric": "cosine"
+    },
+    "metrics": {
+      "recall@10": 0.9970620000000248,
+      "search_time": 0.0001200675630569458,
+      "index_time": 57.715015172958374,
+      "qps": 8328.64409453966
+    }
+  }
+]

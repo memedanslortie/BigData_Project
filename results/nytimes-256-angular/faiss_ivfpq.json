@@ -1,0 +1,4482 @@
+[
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.10464000000000379,
+      "search_time": 1.3365769386291504e-05,
+      "index_time": 4.114360094070435,
+      "qps": 74817.98997861224
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.11101000000000207,
+      "search_time": 3.010849952697754e-05,
+      "index_time": 4.9583799839019775,
+      "qps": 33213.2127376188
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.11136000000000199,
+      "search_time": 3.657670021057129e-05,
+      "index_time": 5.553326845169067,
+      "qps": 27339.80906541654
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.11154000000000192,
+      "search_time": 9.55604076385498e-05,
+      "index_time": 5.304778814315796,
+      "qps": 10464.584912429698
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.11158000000000189,
+      "search_time": 9.377849102020264e-05,
+      "index_time": 6.5471601486206055,
+      "qps": 10663.426006551657
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.11164000000000188,
+      "search_time": 0.00020023128986358644,
+      "index_time": 6.303965091705322,
+      "qps": 4994.224432561364
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.11164000000000188,
+      "search_time": 0.0001922833204269409,
+      "index_time": 6.708786964416504,
+      "qps": 5200.659099185649
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16087999999999628,
+      "search_time": 8.813786506652832e-06,
+      "index_time": 9.397087812423706,
+      "qps": 113458.61387102795
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.18785999999999536,
+      "search_time": 3.255002498626709e-05,
+      "index_time": 7.884494781494141,
+      "qps": 30721.94262283675
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.19375999999999519,
+      "search_time": 3.358588218688965e-05,
+      "index_time": 7.834964275360107,
+      "qps": 29774.41516752396
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.19625999999999466,
+      "search_time": 5.279359817504883e-05,
+      "index_time": 7.557363986968994,
+      "qps": 18941.690556576184
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.19727999999999474,
+      "search_time": 0.0001145777940750122,
+      "index_time": 7.737883806228638,
+      "qps": 8727.694646881719
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.19746999999999468,
+      "search_time": 0.0002371238946914673,
+      "index_time": 7.716702938079834,
+      "qps": 4217.204686609696
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.19746999999999468,
+      "search_time": 0.0002721662998199463,
+      "index_time": 8.264681816101074,
+      "qps": 3674.224180809886
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.21890999999999408,
+      "search_time": 1.1285805702209473e-05,
+      "index_time": 14.004039287567139,
+      "qps": 88606.8772036564
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2758399999999927,
+      "search_time": 2.744331359863281e-05,
+      "index_time": 13.386680126190186,
+      "qps": 36438.74841884322
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2920899999999921,
+      "search_time": 5.0231385231018066e-05,
+      "index_time": 12.612284898757935,
+      "qps": 19907.872247618136
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3037899999999922,
+      "search_time": 9.302849769592285e-05,
+      "index_time": 12.475141048431396,
+      "qps": 10749.39426914799
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3093099999999929,
+      "search_time": 0.00017932560443878175,
+      "index_time": 12.389248132705688,
+      "qps": 5576.448511798439
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31106999999999263,
+      "search_time": 0.00034343748092651366,
+      "index_time": 12.60043215751648,
+      "qps": 2911.7381052942587
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31106999999999263,
+      "search_time": 0.0004346851110458374,
+      "index_time": 13.942010879516602,
+      "qps": 2300.5158782504295
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.21890999999999408,
+      "search_time": 1.3753700256347656e-05,
+      "index_time": 15.045859098434448,
+      "qps": 72707.70638893897
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2758399999999927,
+      "search_time": 2.8197693824768066e-05,
+      "index_time": 13.81483507156372,
+      "qps": 35463.893118863074
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2920899999999921,
+      "search_time": 5.103752613067627e-05,
+      "index_time": 12.434201002120972,
+      "qps": 19593.426167240243
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3037899999999922,
+      "search_time": 0.00010744602680206298,
+      "index_time": 11.96480417251587,
+      "qps": 9306.998404344904
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3093099999999929,
+      "search_time": 0.00018587288856506347,
+      "index_time": 12.364319086074829,
+      "qps": 5380.020764297517
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31106999999999263,
+      "search_time": 0.00033766098022460937,
+      "index_time": 12.357937097549438,
+      "qps": 2961.550367279062
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31106999999999263,
+      "search_time": 0.0003757695198059082,
+      "index_time": 13.23170018196106,
+      "qps": 2661.2057319511127
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.27741999999999156,
+      "search_time": 1.9491410255432128e-05,
+      "index_time": 21.636223077774048,
+      "qps": 51304.65096651006
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3681399999999918,
+      "search_time": 4.529271125793457e-05,
+      "index_time": 20.976428031921387,
+      "qps": 22078.607621989417
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3980099999999932,
+      "search_time": 7.888319492340088e-05,
+      "index_time": 20.053736925125122,
+      "qps": 12676.971324133676
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4198399999999945,
+      "search_time": 0.00015343167781829833,
+      "index_time": 19.652549028396606,
+      "qps": 6517.558917554505
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.43152999999999675,
+      "search_time": 0.00043364417552947996,
+      "index_time": 20.47565007209778,
+      "qps": 2306.038121644316
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4365699999999972,
+      "search_time": 0.0006741208791732788,
+      "index_time": 20.86421298980713,
+      "qps": 1483.413481016
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.27741999999999156,
+      "search_time": 2.1051096916198732e-05,
+      "index_time": 23.477642059326172,
+      "qps": 47503.462835255115
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4367999999999971,
+      "search_time": 0.0007216517210006714,
+      "index_time": 22.139865159988403,
+      "qps": 1385.7099912591625
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3681399999999918,
+      "search_time": 4.3741989135742185e-05,
+      "index_time": 21.455911874771118,
+      "qps": 22861.32889148578
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3980099999999932,
+      "search_time": 7.885820865631103e-05,
+      "index_time": 21.1377010345459,
+      "qps": 12680.988029519105
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4198399999999945,
+      "search_time": 0.00018704330921173095,
+      "index_time": 19.627118825912476,
+      "qps": 5346.355366649395
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.43152999999999675,
+      "search_time": 0.00032277798652648925,
+      "index_time": 21.068804025650024,
+      "qps": 3098.1047089403464
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.33454999999999135,
+      "search_time": 4.235019683837891e-05,
+      "index_time": 13.981948375701904,
+      "qps": 23612.641136387178
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.446319999999999,
+      "search_time": 0.00011488001346588135,
+      "index_time": 15.746702909469604,
+      "qps": 8704.734355702298
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4365699999999972,
+      "search_time": 0.0009750822782516479,
+      "index_time": 30.224243879318237,
+      "qps": 1025.5544812003252
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4367999999999971,
+      "search_time": 0.0011874454975128175,
+      "index_time": 32.23069477081299,
+      "qps": 842.1439148950967
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.46742999999999957,
+      "search_time": 0.00027721099853515626,
+      "index_time": 22.727388858795166,
+      "qps": 3607.3604773411566
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.45420999999999906,
+      "search_time": 0.0004999330997467041,
+      "index_time": 23.449149131774902,
+      "qps": 2000.2676368231262
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4079699999999945,
+      "search_time": 0.0010520437002182006,
+      "index_time": 23.097290992736816,
+      "qps": 950.5308570286516
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39196999999999405,
+      "search_time": 0.0020708057165145875,
+      "index_time": 24.594630241394043,
+      "qps": 482.9038243544735
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3918599999999955,
+      "search_time": 8.251371383666992e-05,
+      "index_time": 32.6538028717041,
+      "qps": 12119.197567321105
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3923299999999939,
+      "search_time": 0.0022655271291732787,
+      "index_time": 26.769515991210938,
+      "qps": 441.3983779416994
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5279100000000019,
+      "search_time": 0.00017818100452423095,
+      "index_time": 27.1270432472229,
+      "qps": 5612.270526087473
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.547440000000002,
+      "search_time": 0.0006186351776123047,
+      "index_time": 25.349622011184692,
+      "qps": 1616.4615854203728
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5121100000000028,
+      "search_time": 0.001127196192741394,
+      "index_time": 26.915864944458008,
+      "qps": 887.1570064195773
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4185800000000012,
+      "search_time": 0.0021547504901885985,
+      "index_time": 30.757399082183838,
+      "qps": 464.0908562515158
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3918599999999955,
+      "search_time": 0.00010854082107543945,
+      "index_time": 34.81767392158508,
+      "qps": 9213.123598032918
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3803199999999992,
+      "search_time": 0.00414400691986084,
+      "index_time": 32.31572890281677,
+      "qps": 241.31233835719104
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5279100000000019,
+      "search_time": 0.0003024042844772339,
+      "index_time": 30.102174043655396,
+      "qps": 3306.831454880672
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.38085999999999914,
+      "search_time": 0.004131395792961121,
+      "index_time": 33.09621787071228,
+      "qps": 242.0489466789295
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.547440000000002,
+      "search_time": 0.0005568783760070801,
+      "index_time": 30.281511306762695,
+      "qps": 1795.7242426437583
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5121100000000028,
+      "search_time": 0.0009702781915664673,
+      "index_time": 31.187653064727783,
+      "qps": 1030.632254431637
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4185800000000012,
+      "search_time": 0.001999738383293152,
+      "index_time": 30.093286991119385,
+      "qps": 500.06541273324393
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3803199999999992,
+      "search_time": 0.004002855277061463,
+      "index_time": 29.963587045669556,
+      "qps": 249.82167247727983
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.43098000000000075,
+      "search_time": 0.0001713501214981079,
+      "index_time": 52.193645000457764,
+      "qps": 5836.004032311365
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.38085999999999914,
+      "search_time": 0.004383496022224426,
+      "index_time": 33.011497020721436,
+      "qps": 228.1284150664166
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5876799999999965,
+      "search_time": 0.0003969902992248535,
+      "index_time": 48.09406280517578,
+      "qps": 2518.953238788348
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.611889999999993,
+      "search_time": 0.0011864315032958984,
+      "index_time": 35.96159100532532,
+      "qps": 842.8636606681524
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5675699999999984,
+      "search_time": 0.0028735613107681275,
+      "index_time": 42.05561685562134,
+      "qps": 348.00023102089006
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.1334799999999987,
+      "search_time": 1.630110740661621e-05,
+      "index_time": 12.544379949569702,
+      "qps": 61345.525494429
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14070999999999764,
+      "search_time": 3.19929838180542e-05,
+      "index_time": 12.709634065628052,
+      "qps": 31256.853242793895
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.44239000000000106,
+      "search_time": 0.005944266891479492,
+      "index_time": 44.24827718734741,
+      "qps": 168.22932386050823
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14155999999999747,
+      "search_time": 4.0146589279174805e-05,
+      "index_time": 11.494765281677246,
+      "qps": 24908.71623106297
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14161999999999747,
+      "search_time": 6.686191558837891e-05,
+      "index_time": 11.569443941116333,
+      "qps": 14956.197279125028
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14161999999999747,
+      "search_time": 0.00012533156871795655,
+      "index_time": 11.48208999633789,
+      "qps": 7978.83574129977
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14164999999999742,
+      "search_time": 0.00022030930519104005,
+      "index_time": 11.439693212509155,
+      "qps": 4539.072914477468
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14168999999999743,
+      "search_time": 0.0003358735799789429,
+      "index_time": 11.023407936096191,
+      "qps": 2977.3106895239976
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39017999999999914,
+      "search_time": 0.010581417393684386,
+      "index_time": 47.54027199745178,
+      "qps": 94.5052976170148
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.18458999999999576,
+      "search_time": 1.0030317306518555e-05,
+      "index_time": 15.458747148513794,
+      "qps": 99697.74329572952
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.20901999999999393,
+      "search_time": 2.53216028213501e-05,
+      "index_time": 14.192699909210205,
+      "qps": 39491.970830410566
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2144699999999934,
+      "search_time": 3.677611351013184e-05,
+      "index_time": 14.414709091186523,
+      "qps": 27191.562798621977
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.21718999999999292,
+      "search_time": 7.123181819915771e-05,
+      "index_time": 14.504297971725464,
+      "qps": 14038.670151646143
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.21836999999999265,
+      "search_time": 0.00011758630275726318,
+      "index_time": 14.972187757492065,
+      "qps": 8504.391893878397
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.390819999999999,
+      "search_time": 0.00984464089870453,
+      "index_time": 57.7800657749176,
+      "qps": 101.57810836265155
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.21895999999999258,
+      "search_time": 0.00012988479137420654,
+      "index_time": 13.808377981185913,
+      "qps": 7699.130817548414
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.21910999999999253,
+      "search_time": 0.0002344122886657715,
+      "index_time": 12.602089166641235,
+      "qps": 4265.987955204067
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.23791999999999267,
+      "search_time": 9.857773780822754e-06,
+      "index_time": 16.189743041992188,
+      "qps": 101442.7823394967
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.28539999999999094,
+      "search_time": 2.054557800292969e-05,
+      "index_time": 15.447480916976929,
+      "qps": 48672.27390036948
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.29969999999999086,
+      "search_time": 2.909848690032959e-05,
+      "index_time": 15.448060035705566,
+      "qps": 34366.04808439965
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3103299999999912,
+      "search_time": 6.142690181732178e-05,
+      "index_time": 15.30063009262085,
+      "qps": 16279.512239994006
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31691999999999115,
+      "search_time": 8.703680038452149e-05,
+      "index_time": 15.553830862045288,
+      "qps": 11489.392941630225
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32047999999999094,
+      "search_time": 0.00024027609825134279,
+      "index_time": 15.294715881347656,
+      "qps": 4161.878802251657
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32155999999999096,
+      "search_time": 0.00029727468490600587,
+      "index_time": 15.63509225845337,
+      "qps": 3363.892220813172
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.23791999999999267,
+      "search_time": 9.822392463684081e-06,
+      "index_time": 15.91585087776184,
+      "qps": 101808.19018352788
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.28539999999999094,
+      "search_time": 2.0029306411743164e-05,
+      "index_time": 15.720691204071045,
+      "qps": 49926.84117177921
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.29969999999999086,
+      "search_time": 3.3757710456848146e-05,
+      "index_time": 14.640100955963135,
+      "qps": 29622.862050383465
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3103299999999912,
+      "search_time": 5.711989402770996e-05,
+      "index_time": 13.98110294342041,
+      "qps": 17507.03528117333
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31691999999999115,
+      "search_time": 0.00010949621200561524,
+      "index_time": 15.36279010772705,
+      "qps": 9132.736025139551
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32047999999999094,
+      "search_time": 0.00019264938831329344,
+      "index_time": 15.599632024765015,
+      "qps": 5190.776927740687
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32155999999999096,
+      "search_time": 0.0002877907991409302,
+      "index_time": 15.051960706710815,
+      "qps": 3474.746249654435
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.29625999999999286,
+      "search_time": 1.63790225982666e-05,
+      "index_time": 24.684478998184204,
+      "qps": 61053.7041511763
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.36642999999999404,
+      "search_time": 3.359251022338867e-05,
+      "index_time": 24.310298919677734,
+      "qps": 29768.540467802057
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3832299999999934,
+      "search_time": 3.812563419342041e-05,
+      "index_time": 23.107571840286255,
+      "qps": 26229.071887086837
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3887299999999945,
+      "search_time": 0.00010011799335479736,
+      "index_time": 23.133382320404053,
+      "qps": 9988.214570543856
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.381409999999993,
+      "search_time": 0.00019528148174285888,
+      "index_time": 23.942221879959106,
+      "qps": 5120.81325415572
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3733599999999929,
+      "search_time": 0.0003337428092956543,
+      "index_time": 24.084383010864258,
+      "qps": 2996.3192378899325
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.29625999999999286,
+      "search_time": 2.1323275566101075e-05,
+      "index_time": 25.766639947891235,
+      "qps": 46897.110010141296
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3739099999999933,
+      "search_time": 0.0005764106988906861,
+      "index_time": 24.161468982696533,
+      "qps": 1734.8741130664646
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.36642999999999404,
+      "search_time": 4.890420436859131e-05,
+      "index_time": 25.271666765213013,
+      "qps": 20448.13964179835
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3832299999999934,
+      "search_time": 4.411938190460205e-05,
+      "index_time": 24.951504230499268,
+      "qps": 22665.775376506146
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3887299999999945,
+      "search_time": 0.00011179652214050292,
+      "index_time": 23.024314880371094,
+      "qps": 8944.82208259776
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.381409999999993,
+      "search_time": 0.0001879166841506958,
+      "index_time": 23.541436195373535,
+      "qps": 5321.507265411682
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3554999999999929,
+      "search_time": 5.274899005889892e-05,
+      "index_time": 18.251428842544556,
+      "qps": 18957.70893212195
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3733599999999929,
+      "search_time": 0.0006021959781646729,
+      "index_time": 31.57019305229187,
+      "qps": 1660.5889714636155
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.44876999999999745,
+      "search_time": 8.667089939117431e-05,
+      "index_time": 23.400895833969116,
+      "qps": 11537.89803757165
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3739099999999933,
+      "search_time": 0.00081886887550354,
+      "index_time": 32.35682511329651,
+      "qps": 1221.1967384705868
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4688899999999987,
+      "search_time": 0.0001606462001800537,
+      "index_time": 22.310576915740967,
+      "qps": 6224.8593423261245
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4678699999999996,
+      "search_time": 0.00031978588104248046,
+      "index_time": 26.102411031723022,
+      "qps": 3127.092405518553
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.43769999999999765,
+      "search_time": 0.0005305898904800415,
+      "index_time": 28.943278074264526,
+      "qps": 1884.6947858265228
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4023199999999947,
+      "search_time": 0.0008913472890853881,
+      "index_time": 28.16061806678772,
+      "qps": 1121.897168752373
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39822999999999475,
+      "search_time": 0.0009744542121887207,
+      "index_time": 25.186069011688232,
+      "qps": 1026.2154829767742
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.41967999999999656,
+      "search_time": 4.495930671691895e-05,
+      "index_time": 30.427706241607666,
+      "qps": 22242.335859322382
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5356200000000012,
+      "search_time": 0.00014645659923553467,
+      "index_time": 31.564332008361816,
+      "qps": 6827.96135660489
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5544599999999996,
+      "search_time": 0.00016750128269195556,
+      "index_time": 31.189905881881714,
+      "qps": 5970.103535499828
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5378400000000011,
+      "search_time": 0.0004766343832015991,
+      "index_time": 27.416858911514282,
+      "qps": 2098.044193293198
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.47218000000000276,
+      "search_time": 0.001014203715324402,
+      "index_time": 29.705426931381226,
+      "qps": 985.9952047997983
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39273000000000047,
+      "search_time": 0.0020545509338378907,
+      "index_time": 32.52663779258728,
+      "qps": 486.7243656656421
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.41967999999999656,
+      "search_time": 5.258641242980957e-05,
+      "index_time": 36.406214237213135,
+      "qps": 19016.319117315023
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3804100000000002,
+      "search_time": 0.0028238945960998535,
+      "index_time": 34.66663694381714,
+      "qps": 354.120866048302
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5356200000000012,
+      "search_time": 9.260191917419434e-05,
+      "index_time": 35.03643226623535,
+      "qps": 10798.912257087142
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5544599999999996,
+      "search_time": 0.00024698219299316407,
+      "index_time": 30.349483013153076,
+      "qps": 4048.8748920764415
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5378400000000011,
+      "search_time": 0.0004034862995147705,
+      "index_time": 29.051173210144043,
+      "qps": 2478.398897812868
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.47218000000000276,
+      "search_time": 0.000969137191772461,
+      "index_time": 31.566853046417236,
+      "qps": 1031.8456545570125
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39273000000000047,
+      "search_time": 0.0017997116327285766,
+      "index_time": 30.702671766281128,
+      "qps": 555.6445720606257
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3804100000000002,
+      "search_time": 0.002160718011856079,
+      "index_time": 30.93236494064331,
+      "qps": 462.8091192431861
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.46050000000000163,
+      "search_time": 8.024711608886719e-05,
+      "index_time": 51.734368085861206,
+      "qps": 12461.507014066161
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5953999999999936,
+      "search_time": 0.00024620828628540037,
+      "index_time": 42.81379294395447,
+      "qps": 4061.601723838073
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.6166499999999909,
+      "search_time": 0.00034911301136016846,
+      "index_time": 44.65782284736633,
+      "qps": 2864.401977181918
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5960199999999953,
+      "search_time": 0.0013905711889266967,
+      "index_time": 43.28683400154114,
+      "qps": 719.1289507240858
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5113600000000017,
+      "search_time": 0.002771613073348999,
+      "index_time": 43.110393047332764,
+      "qps": 360.8007227328015
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.14381999999999778,
+      "search_time": 2.0040225982666016e-05,
+      "index_time": 16.7363920211792,
+      "qps": 49899.63690354388
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.1496799999999973,
+      "search_time": 1.918520927429199e-05,
+      "index_time": 18.44962477684021,
+      "qps": 52123.4866767907
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.15017999999999718,
+      "search_time": 3.206071853637695e-05,
+      "index_time": 17.886637926101685,
+      "qps": 31190.81685163647
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4049000000000004,
+      "search_time": 0.005274694895744324,
+      "index_time": 49.203497886657715,
+      "qps": 189.584425216103
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.15048999999999718,
+      "search_time": 3.2403993606567386e-05,
+      "index_time": 17.77762770652771,
+      "qps": 30860.393695341547
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.15049999999999716,
+      "search_time": 8.084838390350342e-05,
+      "index_time": 17.303832054138184,
+      "qps": 12368.831035553534
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.15058999999999717,
+      "search_time": 0.00011254458427429199,
+      "index_time": 18.750340700149536,
+      "qps": 8885.367576309269
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.15065999999999707,
+      "search_time": 0.00014936678409576415,
+      "index_time": 18.932755947113037,
+      "qps": 6694.928903060976
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 256,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.38705999999999924,
+      "search_time": 0.006489486408233642,
+      "index_time": 52.46542191505432,
+      "qps": 154.0953994034464
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.19752999999999502,
+      "search_time": 2.092728614807129e-05,
+      "index_time": 22.349018096923828,
+      "qps": 47784.50454227494
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.22132999999999414,
+      "search_time": 1.6096377372741698e-05,
+      "index_time": 17.55114507675171,
+      "qps": 62125.78003380085
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.22560999999999384,
+      "search_time": 1.9672679901123046e-05,
+      "index_time": 17.89075493812561,
+      "qps": 50831.915378387945
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.22860999999999349,
+      "search_time": 4.322679042816162e-05,
+      "index_time": 16.647638082504272,
+      "qps": 23133.801748753354
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.230339999999993,
+      "search_time": 7.053189277648926e-05,
+      "index_time": 17.549417972564697,
+      "qps": 14177.983329738954
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.23128999999999278,
+      "search_time": 0.0001004690170288086,
+      "index_time": 18.174503803253174,
+      "qps": 9953.317247179386
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.23150999999999272,
+      "search_time": 0.00011133346557617188,
+      "index_time": 17.576777935028076,
+      "qps": 8982.025259204944
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2517599999999933,
+      "search_time": 1.4855122566223144e-05,
+      "index_time": 24.00412106513977,
+      "qps": 67316.84612779644
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.29543999999999115,
+      "search_time": 1.5777802467346192e-05,
+      "index_time": 22.756230115890503,
+      "qps": 63380.182510815706
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3055799999999906,
+      "search_time": 1.878509521484375e-05,
+      "index_time": 22.512263298034668,
+      "qps": 53233.69344488668
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3135799999999913,
+      "search_time": 4.718930721282959e-05,
+      "index_time": 23.514726877212524,
+      "qps": 21191.241386313995
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3196099999999917,
+      "search_time": 0.00010525240898132324,
+      "index_time": 21.993345975875854,
+      "qps": 9500.970188506064
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32406999999999214,
+      "search_time": 0.00012856249809265136,
+      "index_time": 21.75879192352295,
+      "qps": 7778.318054144594
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.325529999999992,
+      "search_time": 0.00020790538787841798,
+      "index_time": 22.505871057510376,
+      "qps": 4809.880158492068
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2517599999999933,
+      "search_time": 7.76050090789795e-06,
+      "index_time": 22.82815384864807,
+      "qps": 128857.66162108025
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.29543999999999115,
+      "search_time": 2.5400280952453614e-05,
+      "index_time": 23.117182970046997,
+      "qps": 39369.64326780024
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3055799999999906,
+      "search_time": 2.4199771881103515e-05,
+      "index_time": 22.441288948059082,
+      "qps": 41322.703573947896
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3135799999999913,
+      "search_time": 3.675360679626465e-05,
+      "index_time": 22.272766828536987,
+      "qps": 27208.214027626596
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3196099999999917,
+      "search_time": 6.316840648651123e-05,
+      "index_time": 23.03583836555481,
+      "qps": 15830.698534615349
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32406999999999214,
+      "search_time": 0.00017831761837005616,
+      "index_time": 22.58350896835327,
+      "qps": 5607.970817133369
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.325529999999992,
+      "search_time": 0.00017767188549041747,
+      "index_time": 22.44446587562561,
+      "qps": 5628.352495048711
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3052099999999915,
+      "search_time": 1.62074089050293e-05,
+      "index_time": 30.036736965179443,
+      "qps": 61700.17711404143
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.37222999999999234,
+      "search_time": 2.6212120056152342e-05,
+      "index_time": 30.641783952713013,
+      "qps": 38150.29069978971
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3874699999999927,
+      "search_time": 3.904449939727783e-05,
+      "index_time": 30.99836802482605,
+      "qps": 25611.802313688255
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.395709999999994,
+      "search_time": 5.2330517768859866e-05,
+      "index_time": 30.4320387840271,
+      "qps": 19109.308346936832
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39288999999999374,
+      "search_time": 0.00011352741718292236,
+      "index_time": 30.57451581954956,
+      "qps": 8808.444909732585
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3839199999999927,
+      "search_time": 0.0002515899181365967,
+      "index_time": 31.325273275375366,
+      "qps": 3974.7220691771367
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3052099999999915,
+      "search_time": 1.6377615928649903e-05,
+      "index_time": 31.829277992248535,
+      "qps": 61058.94803960246
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.38102999999999304,
+      "search_time": 0.0003434151887893677,
+      "index_time": 31.79892587661743,
+      "qps": 2911.9271151787816
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.37222999999999234,
+      "search_time": 1.3091778755187988e-05,
+      "index_time": 31.812292098999023,
+      "qps": 76383.8145067737
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3874699999999927,
+      "search_time": 4.30696964263916e-05,
+      "index_time": 31.979794025421143,
+      "qps": 23218.180831830407
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.395709999999994,
+      "search_time": 6.305930614471435e-05,
+      "index_time": 31.133962869644165,
+      "qps": 15858.087586709362
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39288999999999374,
+      "search_time": 9.873800277709961e-05,
+      "index_time": 31.13438105583191,
+      "qps": 10127.812715206457
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3649899999999937,
+      "search_time": 3.799319267272949e-05,
+      "index_time": 21.143807888031006,
+      "qps": 26320.504533902294
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.45446999999999815,
+      "search_time": 5.8409881591796874e-05,
+      "index_time": 23.189532041549683,
+      "qps": 17120.39080970232
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3839199999999927,
+      "search_time": 0.0002788463830947876,
+      "index_time": 40.79609799385071,
+      "qps": 3586.203948215001
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.38102999999999304,
+      "search_time": 0.0004178932189941406,
+      "index_time": 42.03429412841797,
+      "qps": 2392.9557948008273
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4727899999999992,
+      "search_time": 0.00012635908126831054,
+      "index_time": 31.34541893005371,
+      "qps": 7913.954343151662
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.47906000000000065,
+      "search_time": 0.00017075459957122802,
+      "index_time": 32.28187394142151,
+      "qps": 5856.357617956073
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4600200000000017,
+      "search_time": 0.00031621551513671877,
+      "index_time": 33.23509502410889,
+      "qps": 3162.4001737158296
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.41934999999999745,
+      "search_time": 0.0004377596855163574,
+      "index_time": 32.733880043029785,
+      "qps": 2284.3583662128563
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3994899999999963,
+      "search_time": 0.000493920111656189,
+      "index_time": 28.530189990997314,
+      "qps": 2024.6189138701975
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.43163999999999786,
+      "search_time": 7.36137866973877e-05,
+      "index_time": 38.11044001579285,
+      "qps": 13584.4118997819
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.547430000000001,
+      "search_time": 0.00010425412654876709,
+      "index_time": 38.87494111061096,
+      "qps": 9591.946459138273
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5695500000000006,
+      "search_time": 0.00011426010131835938,
+      "index_time": 37.699424028396606,
+      "qps": 8751.96143239652
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5698199999999999,
+      "search_time": 0.00017945401668548584,
+      "index_time": 32.60092496871948,
+      "qps": 5572.458162096294
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5283700000000027,
+      "search_time": 0.0005167906761169434,
+      "index_time": 33.75822615623474,
+      "qps": 1935.0194309111573
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4460400000000035,
+      "search_time": 0.0011354949235916137,
+      "index_time": 37.638811349868774,
+      "qps": 880.673245845047
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.43163999999999786,
+      "search_time": 5.115971565246582e-05,
+      "index_time": 41.23362994194031,
+      "qps": 19546.629359575058
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.40193000000000073,
+      "search_time": 0.0016463039159774781,
+      "index_time": 38.98300075531006,
+      "qps": 607.421260615941
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.547430000000001,
+      "search_time": 7.487790584564209e-05,
+      "index_time": 36.74240684509277,
+      "qps": 13355.074353460972
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5695500000000006,
+      "search_time": 0.00010817239284515381,
+      "index_time": 32.86035990715027,
+      "qps": 9244.502905944551
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5698199999999999,
+      "search_time": 0.0002982757806777954,
+      "index_time": 35.78703999519348,
+      "qps": 3352.602070901036
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5283700000000027,
+      "search_time": 0.000564708399772644,
+      "index_time": 37.94211292266846,
+      "qps": 1770.8254391162018
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4460400000000035,
+      "search_time": 0.0009571835041046143,
+      "index_time": 36.53056192398071,
+      "qps": 1044.7317528057881
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.40193000000000073,
+      "search_time": 0.0010111068964004516,
+      "index_time": 36.37488007545471,
+      "qps": 989.0151116167913
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.47200999999999993,
+      "search_time": 6.210198402404785e-05,
+      "index_time": 49.25968813896179,
+      "qps": 16102.545123401667
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.607919999999997,
+      "search_time": 0.00020381157398223878,
+      "index_time": 51.078189849853516,
+      "qps": 4906.492700395637
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.634049999999995,
+      "search_time": 0.00030031509399414065,
+      "index_time": 49.87629008293152,
+      "qps": 3329.8359622893636
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.6345099999999938,
+      "search_time": 0.00041336941719055176,
+      "index_time": 47.95118308067322,
+      "qps": 2419.143648304848
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5823099999999986,
+      "search_time": 0.001432177996635437,
+      "index_time": 50.69295692443848,
+      "qps": 698.237231928757
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16138999999999704,
+      "search_time": 2.1510863304138184e-05,
+      "index_time": 48.382957220077515,
+      "qps": 46488.13884692501
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.47786000000000295,
+      "search_time": 0.0031121076822280885,
+      "index_time": 58.951271772384644,
+      "qps": 321.32564233254874
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16666999999999688,
+      "search_time": 2.1551418304443358e-05,
+      "index_time": 49.32251310348511,
+      "qps": 46400.65845660957
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 512,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.41800000000000054,
+      "search_time": 0.004433042216300964,
+      "index_time": 59.48620963096619,
+      "qps": 225.5787225131422
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16728999999999675,
+      "search_time": 2.0603513717651367e-05,
+      "index_time": 49.911900758743286,
+      "qps": 48535.410692754005
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.1676199999999968,
+      "search_time": 2.8905081748962402e-05,
+      "index_time": 48.268563747406006,
+      "qps": 34595.99279756047
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16766999999999677,
+      "search_time": 4.5471692085266116e-05,
+      "index_time": 45.22222185134888,
+      "qps": 21991.704160136658
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16773999999999673,
+      "search_time": 7.678179740905762e-05,
+      "index_time": 44.84813189506531,
+      "qps": 13023.920170460015
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.16773999999999673,
+      "search_time": 0.00011158828735351562,
+      "index_time": 45.22061491012573,
+      "qps": 8961.51400578418
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.22006999999999394,
+      "search_time": 1.6650891304016112e-05,
+      "index_time": 48.7547070980072,
+      "qps": 60056.84511067614
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.23836999999999275,
+      "search_time": 1.7966008186340332e-05,
+      "index_time": 47.516114950180054,
+      "qps": 55660.66705682046
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2420299999999926,
+      "search_time": 2.4114394187927247e-05,
+      "index_time": 45.911221981048584,
+      "qps": 41469.00777215648
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.24452999999999228,
+      "search_time": 3.1172823905944824e-05,
+      "index_time": 46.18366003036499,
+      "qps": 32079.22397461382
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2460399999999924,
+      "search_time": 4.699127674102783e-05,
+      "index_time": 44.67746305465698,
+      "qps": 21280.545440615904
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.24676999999999244,
+      "search_time": 8.279597759246826e-05,
+      "index_time": 46.389209032058716,
+      "qps": 12077.88142706787
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2469699999999924,
+      "search_time": 0.00011353557109832764,
+      "index_time": 44.974225759506226,
+      "qps": 8807.81230345817
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2695799999999925,
+      "search_time": 1.7347002029418946e-05,
+      "index_time": 52.85486626625061,
+      "qps": 57646.84861995695
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.30611999999999145,
+      "search_time": 1.727299690246582e-05,
+      "index_time": 50.21146893501282,
+      "qps": 57893.83311110559
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31499999999999106,
+      "search_time": 2.672278881072998e-05,
+      "index_time": 49.56426191329956,
+      "qps": 37421.24398328032
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32095999999999075,
+      "search_time": 3.6180996894836424e-05,
+      "index_time": 49.41476821899414,
+      "qps": 27638.818325172106
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3259599999999913,
+      "search_time": 6.216027736663819e-05,
+      "index_time": 48.93635106086731,
+      "qps": 16087.444303083279
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3294299999999917,
+      "search_time": 8.533058166503906e-05,
+      "index_time": 49.589470863342285,
+      "qps": 11719.127896320337
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.33092999999999195,
+      "search_time": 0.00014971299171447753,
+      "index_time": 49.814730167388916,
+      "qps": 6679.447044296144
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.2695799999999925,
+      "search_time": 1.6495418548583986e-05,
+      "index_time": 50.70334482192993,
+      "qps": 60622.89338428717
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.30611999999999145,
+      "search_time": 2.0985102653503417e-05,
+      "index_time": 47.68189597129822,
+      "qps": 47652.85243115321
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.31499999999999106,
+      "search_time": 2.2154498100280763e-05,
+      "index_time": 49.77171206474304,
+      "qps": 45137.56057454206
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.32095999999999075,
+      "search_time": 3.744330406188965e-05,
+      "index_time": 49.71212983131409,
+      "qps": 26707.044825614492
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3259599999999913,
+      "search_time": 5.77843189239502e-05,
+      "index_time": 49.88052463531494,
+      "qps": 17305.733088523506
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3294299999999917,
+      "search_time": 0.00011058938503265381,
+      "index_time": 49.086819887161255,
+      "qps": 9042.45918091261
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.33092999999999195,
+      "search_time": 0.00013798398971557617,
+      "index_time": 47.922210931777954,
+      "qps": 7247.217608805785
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3217899999999921,
+      "search_time": 1.3739895820617676e-05,
+      "index_time": 58.88326811790466,
+      "qps": 72780.75562257394
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3783199999999923,
+      "search_time": 2.3457884788513183e-05,
+      "index_time": 58.55868697166443,
+      "qps": 42629.5895395342
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3913399999999925,
+      "search_time": 3.8768911361694335e-05,
+      "index_time": 57.52609086036682,
+      "qps": 25793.86330120301
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3974799999999938,
+      "search_time": 5.082950592041016e-05,
+      "index_time": 53.46371793746948,
+      "qps": 19673.612440101617
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3988999999999942,
+      "search_time": 7.696168422698975e-05,
+      "index_time": 56.015608072280884,
+      "qps": 12993.478638677054
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3939199999999942,
+      "search_time": 0.0001550149917602539,
+      "index_time": 56.72271919250488,
+      "qps": 6450.9889569042425
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39014999999999417,
+      "search_time": 0.00031743330955505373,
+      "index_time": 57.202654123306274,
+      "qps": 3150.2680087407966
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3217899999999921,
+      "search_time": 1.3893508911132813e-05,
+      "index_time": 53.20805597305298,
+      "qps": 71976.0577688696
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3783199999999923,
+      "search_time": 1.1392688751220703e-05,
+      "index_time": 56.44213104248047,
+      "qps": 87775.59203422038
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3913399999999925,
+      "search_time": 2.934701442718506e-05,
+      "index_time": 58.10203504562378,
+      "qps": 34075.016471647235
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3974799999999938,
+      "search_time": 7.416722774505615e-05,
+      "index_time": 55.98999500274658,
+      "qps": 13483.044066813702
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3988999999999942,
+      "search_time": 0.00010036630630493164,
+      "index_time": 54.841978788375854,
+      "qps": 9963.503060098801
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3939199999999942,
+      "search_time": 0.00019552781581878663,
+      "index_time": 62.26432394981384,
+      "qps": 5114.3618406027235
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.3862999999999965,
+      "search_time": 4.5994877815246585e-05,
+      "index_time": 44.30080604553223,
+      "qps": 21741.55139658868
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.46547999999999956,
+      "search_time": 5.027267932891846e-05,
+      "index_time": 43.994548082351685,
+      "qps": 19891.51987419075
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.39014999999999417,
+      "search_time": 0.0002531519889831543,
+      "index_time": 65.58635807037354,
+      "qps": 3950.1961016255095
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4813400000000007,
+      "search_time": 8.07546854019165e-05,
+      "index_time": 56.73460078239441,
+      "qps": 12383.182412549744
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4844100000000001,
+      "search_time": 0.00013188428878784178,
+      "index_time": 61.40249586105347,
+      "qps": 7582.40431207594
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4743099999999994,
+      "search_time": 0.0002252480983734131,
+      "index_time": 63.26037812232971,
+      "qps": 4439.549133694413
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.44303999999999877,
+      "search_time": 0.0003122169256210327,
+      "index_time": 62.58539605140686,
+      "qps": 3202.9013097572897
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 28,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.41931999999999614,
+      "search_time": 0.0002751166820526123,
+      "index_time": 56.80820298194885,
+      "qps": 3634.821387562255
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.45557000000000036,
+      "search_time": 5.4506421089172364e-05,
+      "index_time": 63.9575469493866,
+      "qps": 18346.462306963844
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5648100000000023,
+      "search_time": 9.393711090087891e-05,
+      "index_time": 68.40478324890137,
+      "qps": 10645.420009299472
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5846100000000009,
+      "search_time": 0.00010419881343841552,
+      "index_time": 67.36524391174316,
+      "qps": 9597.038267532946
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5857100000000007,
+      "search_time": 0.00012127501964569092,
+      "index_time": 62.1829559803009,
+      "qps": 8245.721195688393
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5630500000000024,
+      "search_time": 0.00038509979248046875,
+      "index_time": 62.84678888320923,
+      "qps": 2596.7295218698864
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5048500000000038,
+      "search_time": 0.0007933434963226318,
+      "index_time": 69.01894521713257,
+      "qps": 1260.4880542101607
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 49,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.45809000000000377,
+      "search_time": 0.0010019367933273315,
+      "index_time": 68.80881404876709,
+      "qps": 998.0669505898675
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.45557000000000036,
+      "search_time": 4.50200080871582e-05,
+      "index_time": 63.539191007614136,
+      "qps": 22212.34607652695
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5648100000000023,
+      "search_time": 6.0856080055236814e-05,
+      "index_time": 62.9618661403656,
+      "qps": 16432.21185282287
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5846100000000009,
+      "search_time": 0.00012433161735534668,
+      "index_time": 66.79740810394287,
+      "qps": 8043.006447362012
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5857100000000007,
+      "search_time": 0.0001508305072784424,
+      "index_time": 65.45598888397217,
+      "qps": 6629.958474872318
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5630500000000024,
+      "search_time": 0.00032877218723297117,
+      "index_time": 62.560022830963135,
+      "qps": 3041.6198171026867
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5048500000000038,
+      "search_time": 0.0005203787803649902,
+      "index_time": 63.206080198287964,
+      "qps": 1921.6771277618327
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 56,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.45809000000000377,
+      "search_time": 0.0008522993087768555,
+      "index_time": 62.41431498527527,
+      "qps": 1173.2967394225761
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 1,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.49235999999999897,
+      "search_time": 5.790929794311523e-05,
+      "index_time": 80.09978604316711,
+      "qps": 17268.384102710206
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 5,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.6262499999999948,
+      "search_time": 0.00011850111484527588,
+      "index_time": 79.33015489578247,
+      "qps": 8438.739173936689
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 10,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.6496699999999942,
+      "search_time": 0.0001565627098083496,
+      "index_time": 76.83054208755493,
+      "qps": 6387.216989435815
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 20,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.6523599999999937,
+      "search_time": 0.00041721169948577883,
+      "index_time": 76.03260207176208,
+      "qps": 2396.8647121653553
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 40,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.6257799999999969,
+      "search_time": 0.00040747010707855224,
+      "index_time": 74.26943778991699,
+      "qps": 2454.1677601081533
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 80,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.5538400000000022,
+      "search_time": 0.0008320845127105713,
+      "index_time": 64.79007577896118,
+      "qps": 1201.8010006488796
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 1024,
+      "m": 98,
+      "nbits": 8,
+      "nprobe": 120,
+      "metric": "l2"
+    },
+    "metrics": {
+      "recall@10": 0.4943200000000016,
+      "search_time": 0.0008796714067459107,
+      "index_time": 58.984578132629395,
+      "qps": 1136.788114665691
+    }
+  }
+]
