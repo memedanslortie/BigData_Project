@@ -622,5 +622,499 @@
       "recall@10": 0.6389000000000044,
       "search_time": 4.536223411560059e-05
     }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 1
+    },
+    "metrics": {
+      "recall@10": 0.4652799999999969,
+      "search_time": 9.804582595825195e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.5386899999999956,
+      "search_time": 1.1292600631713868e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.5405499999999959,
+      "search_time": 1.4832592010498047e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.5408899999999958,
+      "search_time": 2.3885202407836913e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 40
+    },
+    "metrics": {
+      "recall@10": 0.5408899999999959,
+      "search_time": 3.914048671722412e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 80
+    },
+    "metrics": {
+      "recall@10": 0.5409599999999959,
+      "search_time": 7.184500694274903e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 16,
+      "nbits": 8,
+      "nprobe": 120
+    },
+    "metrics": {
+      "recall@10": 0.5409699999999958,
+      "search_time": 9.360418319702148e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 1
+    },
+    "metrics": {
+      "recall@10": 0.21094999999999622,
+      "search_time": 6.233596801757813e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.21974999999999592,
+      "search_time": 7.792186737060547e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.21987999999999605,
+      "search_time": 7.984113693237305e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.21989999999999604,
+      "search_time": 1.1486315727233887e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 40
+    },
+    "metrics": {
+      "recall@10": 0.21989999999999604,
+      "search_time": 1.5873193740844726e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 80
+    },
+    "metrics": {
+      "recall@10": 0.21989999999999604,
+      "search_time": 2.5862812995910645e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 2,
+      "nbits": 8,
+      "nprobe": 120
+    },
+    "metrics": {
+      "recall@10": 0.21989999999999604,
+      "search_time": 3.078012466430664e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 1
+    },
+    "metrics": {
+      "recall@10": 0.3087900000000006,
+      "search_time": 5.654311180114746e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.3352300000000035,
+      "search_time": 8.985424041748048e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.33577000000000373,
+      "search_time": 9.314703941345215e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.3359500000000038,
+      "search_time": 1.3771224021911621e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 40
+    },
+    "metrics": {
+      "recall@10": 0.3359800000000038,
+      "search_time": 2.279691696166992e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 80
+    },
+    "metrics": {
+      "recall@10": 0.3360000000000038,
+      "search_time": 3.5818004608154294e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 4,
+      "nbits": 8,
+      "nprobe": 120
+    },
+    "metrics": {
+      "recall@10": 0.3360400000000038,
+      "search_time": 4.246940612792969e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 1
+    },
+    "metrics": {
+      "recall@10": 0.3771800000000008,
+      "search_time": 6.097817420959473e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.4229600000000035,
+      "search_time": 8.145189285278321e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.42390000000000316,
+      "search_time": 1.0828590393066406e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.42409000000000324,
+      "search_time": 1.675393581390381e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 40
+    },
+    "metrics": {
+      "recall@10": 0.42412000000000327,
+      "search_time": 2.8080677986145018e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 80
+    },
+    "metrics": {
+      "recall@10": 0.42414000000000324,
+      "search_time": 4.8496699333190916e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 7,
+      "nbits": 8,
+      "nprobe": 120
+    },
+    "metrics": {
+      "recall@10": 0.4241800000000033,
+      "search_time": 5.6451010704040524e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 1
+    },
+    "metrics": {
+      "recall@10": 0.3940500000000025,
+      "search_time": 6.589198112487793e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.44303000000000275,
+      "search_time": 9.557414054870606e-06
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.4441700000000022,
+      "search_time": 1.2291622161865234e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 20
+    },
+    "metrics": {
+      "recall@10": 0.44436000000000214,
+      "search_time": 1.8622994422912598e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 40
+    },
+    "metrics": {
+      "recall@10": 0.44436000000000214,
+      "search_time": 3.184990882873535e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 80
+    },
+    "metrics": {
+      "recall@10": 0.4444300000000022,
+      "search_time": 5.5733776092529296e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 8,
+      "nbits": 8,
+      "nprobe": 120
+    },
+    "metrics": {
+      "recall@10": 0.44449000000000216,
+      "search_time": 6.750800609588622e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 1
+    },
+    "metrics": {
+      "recall@10": 0.45149999999999757,
+      "search_time": 1.0247921943664551e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 5
+    },
+    "metrics": {
+      "recall@10": 0.5212899999999966,
+      "search_time": 1.3929390907287598e-05
+    }
+  },
+  {
+    "algorithm": "faiss_ivfpq",
+    "parameters": {
+      "nlist": 100,
+      "m": 14,
+      "nbits": 8,
+      "nprobe": 10
+    },
+    "metrics": {
+      "recall@10": 0.5228499999999969,
+      "search_time": 1.9968795776367188e-05
+    }
   }
 ]

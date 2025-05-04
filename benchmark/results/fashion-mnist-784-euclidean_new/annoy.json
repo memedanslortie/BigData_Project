@@ -1,0 +1,674 @@
+[
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.805389999999986,
+      "search_time": 0.0006161373138427734,
+      "index_time": 3.9255130290985107
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.8327599999999822,
+      "search_time": 0.0006308317899703979,
+      "index_time": 3.9366109371185303
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.8981299999999742,
+      "search_time": 0.0009533989906311036,
+      "index_time": 4.011818885803223
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.9464899999999734,
+      "search_time": 0.0011772190809249878,
+      "index_time": 3.6614139080047607
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.9757799999999835,
+      "search_time": 0.0017725512027740478,
+      "index_time": 3.496894121170044
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9948899999999953,
+      "search_time": 0.0033435827016830445,
+      "index_time": 3.53836989402771
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9985099999999986,
+      "search_time": 0.006340259885787964,
+      "index_time": 3.502326011657715
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 10,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.9994899999999995,
+      "search_time": 0.010677557611465454,
+      "index_time": 4.312060117721558
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.8391399999999815,
+      "search_time": 0.0005509275197982788,
+      "index_time": 3.979266881942749
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.860739999999978,
+      "search_time": 0.0006323960065841675,
+      "index_time": 3.7977380752563477
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.9172999999999746,
+      "search_time": 0.0008375624895095825,
+      "index_time": 3.994690179824829
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.9541899999999758,
+      "search_time": 0.0011548774003982544,
+      "index_time": 3.7116448879241943
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.9778699999999825,
+      "search_time": 0.0017118489742279054,
+      "index_time": 3.8484179973602295
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9929499999999926,
+      "search_time": 0.0028229459047317503,
+      "index_time": 3.90179181098938
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9979399999999982,
+      "search_time": 0.004485086488723755,
+      "index_time": 3.8154680728912354
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 20,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.9992799999999992,
+      "search_time": 0.007846376776695252,
+      "index_time": 3.763585090637207
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.8639499999999777,
+      "search_time": 0.0006273221015930176,
+      "index_time": 4.971899032592773
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.8815299999999746,
+      "search_time": 0.0006667258024215698,
+      "index_time": 5.107977867126465
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.9307799999999755,
+      "search_time": 0.0008850060939788818,
+      "index_time": 4.798418760299683
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.9621199999999768,
+      "search_time": 0.0011955406188964843,
+      "index_time": 5.035670042037964
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.9805599999999834,
+      "search_time": 0.0015800173997879028,
+      "index_time": 5.215099811553955
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9928099999999939,
+      "search_time": 0.0024486923933029173,
+      "index_time": 5.000840187072754
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9972699999999972,
+      "search_time": 0.0036471987962722776,
+      "index_time": 5.493106842041016
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 40,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.9990799999999995,
+      "search_time": 0.005827827620506287,
+      "index_time": 4.741673946380615
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.8822699999999771,
+      "search_time": 0.0007120896100997925,
+      "index_time": 6.988692998886108
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.8963099999999764,
+      "search_time": 0.0007669471979141235,
+      "index_time": 6.972689867019653
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.9398999999999758,
+      "search_time": 0.000975698709487915,
+      "index_time": 6.95634913444519
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.9672399999999792,
+      "search_time": 0.001242548704147339,
+      "index_time": 6.946765661239624
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.9826099999999854,
+      "search_time": 0.0016053431272506713,
+      "index_time": 6.9947052001953125
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9927699999999932,
+      "search_time": 0.0023605948925018313,
+      "index_time": 6.943252325057983
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9964999999999973,
+      "search_time": 0.0033004334926605224,
+      "index_time": 6.954531669616699
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 80,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.998609999999999,
+      "search_time": 0.004891160202026367,
+      "index_time": 7.006540775299072
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.886699999999979,
+      "search_time": 0.0007698997974395752,
+      "index_time": 8.276473999023438
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.8997599999999762,
+      "search_time": 0.0008247272014617919,
+      "index_time": 8.193168878555298
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.9421599999999751,
+      "search_time": 0.0010347779989242553,
+      "index_time": 8.262143850326538
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.96768999999998,
+      "search_time": 0.001297074007987976,
+      "index_time": 8.232608795166016
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.9825399999999854,
+      "search_time": 0.0016505899667739869,
+      "index_time": 8.212330102920532
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9925899999999936,
+      "search_time": 0.0023819513320922853,
+      "index_time": 8.181207180023193
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9963399999999969,
+      "search_time": 0.003267565417289734,
+      "index_time": 8.183519840240479
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 100,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.9981999999999985,
+      "search_time": 0.004754887008666992,
+      "index_time": 8.237792015075684
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.9008199999999773,
+      "search_time": 0.0010317244052886962,
+      "index_time": 13.794597148895264
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.9103899999999759,
+      "search_time": 0.0010774587869644165,
+      "index_time": 13.71043586730957
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.9471699999999775,
+      "search_time": 0.0013006972074508668,
+      "index_time": 13.706758737564087
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.9704699999999815,
+      "search_time": 0.0015584399700164795,
+      "index_time": 13.821782112121582
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.9834899999999874,
+      "search_time": 0.0019165509700775146,
+      "index_time": 13.832211017608643
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9924199999999932,
+      "search_time": 0.002614217209815979,
+      "index_time": 13.884143114089966
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9960599999999966,
+      "search_time": 0.0034123749017715456,
+      "index_time": 13.789865016937256
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 200,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.9978599999999982,
+      "search_time": 0.00468002028465271,
+      "index_time": 13.774956226348877
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 100
+    },
+    "metrics": {
+      "recall@10": 0.9107899999999767,
+      "search_time": 0.0015526049852371217,
+      "index_time": 25.390230894088745
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 500
+    },
+    "metrics": {
+      "recall@10": 0.9189899999999767,
+      "search_time": 0.0015991392850875856,
+      "index_time": 25.850281953811646
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 1000
+    },
+    "metrics": {
+      "recall@10": 0.9525199999999774,
+      "search_time": 0.0018268337965011597,
+      "index_time": 26.313919067382812
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 2000
+    },
+    "metrics": {
+      "recall@10": 0.9725199999999808,
+      "search_time": 0.0021208349227905274,
+      "index_time": 26.270477771759033
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 4000
+    },
+    "metrics": {
+      "recall@10": 0.984289999999987,
+      "search_time": 0.0024634099006652834,
+      "index_time": 26.559980869293213
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 10000
+    },
+    "metrics": {
+      "recall@10": 0.9929399999999936,
+      "search_time": 0.003212969970703125,
+      "index_time": 26.39461398124695
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 20000
+    },
+    "metrics": {
+      "recall@10": 0.9960499999999962,
+      "search_time": 0.00390032479763031,
+      "index_time": 25.87203311920166
+    }
+  },
+  {
+    "algorithm": "annoy",
+    "parameters": {
+      "n_trees": 400,
+      "search_k": 40000
+    },
+    "metrics": {
+      "recall@10": 0.9978999999999983,
+      "search_time": 0.005080260992050171,
+      "index_time": 25.500979900360107
+    }
+  }
+]
