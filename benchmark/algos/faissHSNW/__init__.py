@@ -25,32 +25,25 @@ class FaissHNSW:
         d = xb.shape[1]
         
         if self.metric == 'l2' or self.metric == 'euclidean':
-            # Create HNSW index with L2 distance
             self.index = faiss.IndexHNSWFlat(d, self.M)
         elif self.metric == 'cosine' or self.metric == 'angular':
-            # Pour cosine, on utilise le produit scalaire sur des vecteurs normalisés
             self.index = faiss.IndexHNSWFlat(d, self.M, faiss.METRIC_INNER_PRODUCT)
-            # Normalisation des vecteurs
             xb = xb.copy()
             faiss.normalize_L2(xb)
             self.normalized = True
         elif self.metric == 'inner_product' or self.metric == 'dot':
-            # Produit scalaire directement
             self.index = faiss.IndexHNSWFlat(d, self.M, faiss.METRIC_INNER_PRODUCT)
             self.normalized = False
         else:
             raise ValueError(f"Métrique non supportée: {self.metric}")
         
-        # Set construction-time parameters
         self.index.hnsw.efConstruction = self.efConstruction
         
         start = time.time()
-        # Add vectors to the index (étape bénéficie de la parallélisation)
         self.index.add(xb)
         build_time = time.time() - start
         print(f"Index HNSW construit en {build_time:.2f}s avec {self.n_threads} threads")
         
-        # Set search-time parameters
         self.index.hnsw.efSearch = self.efSearch
         
         return self
@@ -58,7 +51,6 @@ class FaissHNSW:
     def query(self, xq, k):
         start = time.time()
         
-        # Normalisation si nécessaire pour cosine similarity
         if hasattr(self, 'normalized') and self.normalized:
             xq = xq.copy()
             faiss.normalize_L2(xq)

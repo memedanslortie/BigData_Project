@@ -34,8 +34,7 @@ class HNSW:
     def fit(self, data):
         n_samples = data.shape[0]
         dim = data.shape[1]
-        
-        # Initialiser l'index avec la métrique appropriée
+    
         self.index = hnswlib.Index(space=self.space, dim=dim)
         self.index.init_index(
             max_elements=n_samples,
@@ -44,26 +43,21 @@ class HNSW:
             random_seed=self.random_seed
         )
         
-        # Définir le nombre de threads pour la construction
         self.index.set_num_threads(self.n_threads)
         
         start = time.time()
-        # Ajouter les éléments à l'index (cette étape bénéficie de la parallélisation)
         self.index.add_items(data)
         build_time = time.time() - start
         print(f"Index HNSW construit en {build_time:.2f}s avec {self.n_threads} threads")
         
-        # Configurer le facteur d'exploration pour la recherche
         self.index.set_ef(self.ef)
         
         return self
     
     def query(self, xq, k):
-        # Configurer le nombre de threads pour la recherche
         self.index.set_num_threads(self.n_threads)
         
         start = time.time()
-        # Recherche des plus proches voisins
         labels, _ = self.index.knn_query(xq, k=k)
         self.last_search_time = time.time() - start
         

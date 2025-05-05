@@ -2,7 +2,6 @@ import os
 import json
 import numpy as np
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import plotly.express as px
 import pandas as pd
 import re
@@ -35,19 +34,7 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
     
     all_data = []
     
-    n_datasets = len(datasets)
-    
-    fig = make_subplots(
-        rows=n_datasets, 
-        cols=1,
-        subplot_titles=[prettify_dataset_name(d) for d in datasets],
-        vertical_spacing=0.12 if n_datasets <= 3 else 0.08
-    )
-    
-    for idx, dataset in enumerate(datasets):
-        row = idx + 1
-        col = 1
-        
+    for dataset in datasets:
         result_dir = os.path.join(base_dir, dataset)
         all_results = []
         
@@ -80,6 +67,8 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
                 "Build Time": res["metrics"].get("index_time", 0),
                 "Parameters": ", ".join(f"{k}={v}" for k, v in res.get("parameters", {}).items())
             })
+        
+        fig = go.Figure()
         
         for method, res_list in method_groups.items():
             if len(res_list) == 0:
@@ -134,8 +123,6 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
                 pareto_qps = [qps_values[i] for i in pareto_indices]
                 pareto_texts = [hover_texts[i] for i in pareto_indices]
                 
-                show_legend = (idx == 0)
-                
                 fig.add_trace(
                     go.Scatter(
                         x=recall_values,
@@ -144,15 +131,14 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
                         marker=dict(
                             size=7, 
                             color=color, 
-                            opacity=0.3,
+                            opacity=0.1,
                             line=dict(width=1, color='rgba(0,0,0,0.2)')
                         ),
                         name=method + " (all)",
                         hovertext=hover_texts,
                         hoverinfo='text',
                         showlegend=False
-                    ),
-                    row=row, col=col
+                    )
                 )
                 
                 fig.add_trace(
@@ -169,13 +155,10 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
                             color=color,
                             symbol='circle',
                             line=dict(width=1.5, color='white')
-                        ),
-                        showlegend=show_legend
-                    ),
-                    row=row, col=col
+                        )
+                    )
                 )
             else:
-                show_legend = (idx == 0)
                 fig.add_trace(
                     go.Scatter(
                         x=recall_values,
@@ -189,72 +172,62 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
                             color=color,
                             symbol='circle',
                             line=dict(width=1.5, color='white')
-                        ),
-                        showlegend=show_legend
-                    ),
-                    row=row, col=col
+                        )
+                    )
                 )
-            
+        
         fig.update_xaxes(
-            title_text="recall@10" if row == n_datasets else "",
+            title_text="recall@10",
             range=[0, 1.05],
-            tickformat='.2f',
-            row=row, col=col
+            tickformat='.2f'
         )
         fig.update_yaxes(
-            title_text="requêtes par seconde (qps)" if row == 1 else "",
+            title_text="query per second (QPS)",
             type="log",
-            tickformat='.1e',
-            row=row, col=col
+            tickformat='.1e'
         )
         
-        fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220,220,220,0.25)', row=row, col=col)
-        fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220,220,220,0.25)', row=row, col=col)
+        fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220,220,220,0.25)')
+        fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='rgba(220,220,220,0.25)')
     
-    fig.update_layout(
-        title={
-            'text': "comparaison des algorithmes ann - performance vs rappel",
-            'font': {'size': 24, 'family': 'arial, sans-serif', 'color': '#333333'},
-            'x': 0.5,
-            'xanchor': 'center'
-        },
-        height=500 * n_datasets + 150,
-        width=1000,
-        legend=dict(
-            orientation="h",
-            yanchor="bottom",
-            y=1.02,
-            xanchor="center",
-            x=0.5,
-            font=dict(size=12),
-            bgcolor='rgba(255,255,255,0.8)',
-            bordercolor='rgba(0,0,0,0.2)',
-            borderwidth=1
-        ),
-        hovermode="closest",
-        template="plotly_white",
-        margin=dict(l=80, r=50, t=120, b=80),
-        plot_bgcolor='rgba(250,250,252,1)',
-        paper_bgcolor='rgba(250,250,252,1)',
-        font=dict(family="arial, sans-serif", size=12, color="#333333")
-    )
-    
-    fig.add_annotation(
-        xref="paper", yref="paper",
-        x=0.01, y=-0.03 if n_datasets <= 2 else -0.01,
-        text="note: les lignes représentent les frontières de pareto (compromis optimaux). plus haut = meilleur qps, plus à droite = meilleur rappel.",
-        showarrow=False,
-        font=dict(size=10, color="gray"),
-        align="left"
-    )
-    
-    html_file = os.path.join(output_dir, "all_datasets_pareto_comparison.html")
-    fig.write_html(html_file)
-    
-    png_file = os.path.join(output_dir, "all_datasets_pareto_comparison.png")
-    fig.write_image(png_file, scale=2)
-    
-    print(f"graphique principal sauvegardé dans: {html_file} et {png_file}")
+        dataset_title = prettify_dataset_name(dataset)
+        fig.update_layout(
+            title={
+                'text': f"QPS vs Recall: {dataset_title}",
+                'font': {'size': 24, 'family': 'arial, sans-serif', 'color': '#333333'},
+                'x': 0.5,
+                'xanchor': 'center'
+            },
+            height=800,
+            width=1000,
+            legend=dict(
+                orientation="v",
+                yanchor="top",
+                y=0.99,
+                xanchor="right",
+                x=0.99,
+                font=dict(size=12),
+                bgcolor='rgba(255,255,255,0.8)',
+                bordercolor='rgba(0,0,0,0.2)',
+                borderwidth=1
+            ),
+            hovermode="closest",
+            template="plotly_white",
+            margin=dict(l=80, r=50, t=120, b=80),
+            plot_bgcolor='rgba(250,250,252,1)',
+            paper_bgcolor='rgba(250,250,252,1)',
+            font=dict(family="arial, sans-serif", size=12, color="#333333")
+        )
+        
+        # Générer un fichier PNG séparé pour chaque dataset
+        dataset_png = os.path.join(output_dir, f"{dataset}_pareto_comparison.png")
+        fig.write_image(dataset_png, scale=2)
+        
+        # Générer également une version HTML pour l'interactivité
+        dataset_html = os.path.join(output_dir, f"{dataset}_pareto_comparison.html")
+        fig.write_html(dataset_html)
+        
+        print(f"visualisation pour {dataset} sauvegardée dans: {dataset_png} et {dataset_html}")
     
     df = pd.DataFrame(all_data)
     
@@ -356,18 +329,17 @@ def plot_all_datasets(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_
                 template="plotly_white"
             )
             
-            radar_html = os.path.join(output_dir, "algo_radar_comparison.html")
-            fig_radar.write_html(radar_html)
-            
             radar_png = os.path.join(output_dir, "algo_radar_comparison.png")
             fig_radar.write_image(radar_png, scale=2)
             
-            print(f"graphique radar sauvegardé dans: {radar_html} et {radar_png}")
+            radar_html = os.path.join(output_dir, "algo_radar_comparison.html")
+            fig_radar.write_html(radar_html)
+            
+            print(f"graphique radar sauvegardé dans: {radar_png} et {radar_html}")
     
     generate_summary_html(base_dir, output_dir)
     
     print("génération des visualisations terminée!")
-    return fig
 
 def generate_summary_html(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", output_dir="visualizations"):
     os.makedirs(output_dir, exist_ok=True)
@@ -710,7 +682,6 @@ def generate_summary_html(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", out
             <ul class="nav-links">
                 <li><a href="#performance-par-dataset">performance par dataset</a></li>
                 <li><a href="#comparaison-algorithmes">comparaison des algorithmes</a></li>
-                <li><a href="#recommandations">recommandations</a></li>
             </ul>
         </div>
         
@@ -801,65 +772,6 @@ def generate_summary_html(base_dir="/Volumes/SSD/M1VMI/S2/big_data/results", out
                 </tbody>
             </table>
         </section>
-        
-        <section id="recommandations" class="section">
-            <h2>recommandations d'utilisation des algorithmes</h2>
-            
-            <div class="highlight-box">
-                <h3>pour une précision maximale:</h3>
-    """
-    
-    best_recall_algo = algo_stats_df.loc[algo_stats_df["Avg Recall@10"].idxmax()]
-    html_content += f"""
-                <p><strong>{best_recall_algo["Algorithm"]}</strong> offre le meilleur rappel moyen ({best_recall_algo["Avg Recall@10"]:.4f})
-                et est recommandé lorsque la précision est la priorité absolue.</p>
-    """
-    
-    html_content += """
-            </div>
-            
-            <div class="highlight-box">
-                <h3>pour une vitesse maximale:</h3>
-    """
-    
-    best_qps_algo = algo_stats_df.loc[algo_stats_df["Avg QPS"].idxmax()]
-    html_content += f"""
-                <p><strong>{best_qps_algo["Algorithm"]}</strong> offre la meilleure vitesse moyenne ({best_qps_algo["Avg QPS"]:.2f} qps)
-                et est recommandé lorsque la performance en temps réel est critique.</p>
-    """
-    
-    html_content += """
-            </div>
-            
-            <div class="highlight-box">
-                <h3>pour un bon compromis:</h3>
-    """
-    
-    algo_stats_df["compromise_score"] = algo_stats_df["Avg Recall@10"] * np.log10(algo_stats_df["Avg QPS"] + 1)
-    best_compromise_algo = algo_stats_df.loc[algo_stats_df["compromise_score"].idxmax()]
-    html_content += f"""
-                <p><strong>{best_compromise_algo["Algorithm"]}</strong> offre le meilleur compromis entre rappel ({best_compromise_algo["Avg Recall@10"]:.4f}) 
-                et vitesse ({best_compromise_algo["Avg QPS"]:.2f} qps), ce qui en fait un bon choix pour la plupart des applications.</p>
-    """
-    
-    html_content += """
-            </div>
-            
-            <div class="highlight-box">
-                <h3>pour un déploiement rapide:</h3>
-    """
-    
-    best_build_algo = algo_stats_df.loc[algo_stats_df["Avg Build Time"].idxmin()]
-    html_content += f"""
-                <p><strong>{best_build_algo["Algorithm"]}</strong> a le temps de construction moyen le plus court ({best_build_algo["Avg Build Time"]:.2f}s)
-                et est recommandé pour les cas où l'index doit être reconstruit fréquemment ou rapidement.</p>
-    """
-    
-    html_content += """
-            </div>
-        </section>
-        
-      
     </body>
     </html>
     """

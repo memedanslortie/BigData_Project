@@ -15,7 +15,6 @@ class FaissIVFPQ:
         self.xb = None
         self.adjusted_m = None
         
-        # Définir le nombre de threads (utiliser tous les cœurs disponibles par défaut)
         if n_threads is None:
             import multiprocessing
             n_threads = multiprocessing.cpu_count()
@@ -33,7 +32,6 @@ class FaissIVFPQ:
     def fit(self, xb):
         d = xb.shape[1]
         
-        # Ajuster m pour qu'il soit un diviseur de d
         self.adjusted_m = self._find_adjusted_m(d, self.m)
         if self.adjusted_m != self.m:
             print(f"Ajustement automatique: m={self.m} -> m={self.adjusted_m} (pour être diviseur de d={d})")
@@ -60,7 +58,6 @@ class FaissIVFPQ:
         # Parallélisation de l'entraînement
         start = time.time()
         
-        # Normalisation si nécessaire
         if hasattr(self, 'xb_normalized') and self.xb_normalized:
             self.index.train(xb_normalized)
             self.index.add(xb_normalized)
@@ -90,16 +87,13 @@ class FaissIVFPQ:
             
             def reorder_single(i):
                 candidates = self.xb[I[i]]
-                # Choisir la bonne fonction de distance pour le reordonnancement
                 if self.metric == 'l2' or self.metric == 'euclidean':
                     dists = np.linalg.norm(candidates - xq[i], axis=1)
                 elif self.metric == 'cosine' or self.metric == 'angular':
-                    # Normaliser pour cosine
                     norm_candidates = candidates / np.linalg.norm(candidates, axis=1, keepdims=True)
                     norm_query = xq[i] / np.linalg.norm(xq[i])
                     dists = 1 - np.dot(norm_candidates, norm_query)
                 elif self.metric == 'inner_product' or self.metric == 'dot':
-                    # Distance négative pour le produit scalaire (plus grand = meilleur)
                     dists = -np.dot(candidates, xq[i])
                 
                 topk = np.argsort(dists)[:k]

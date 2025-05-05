@@ -110,7 +110,6 @@ def save_result(output_dir, dataset, algo_name, params, metrics):
     lock_path = output_path + ".lock"
     
     with filelock.FileLock(lock_path):
-        # Charger les résultats existants s'ils existent
         if os.path.exists(output_path):
             with open(output_path, 'r') as f:
                 try:
@@ -120,10 +119,8 @@ def save_result(output_dir, dataset, algo_name, params, metrics):
         else:
             data = []
 
-        # Ajouter le nouveau résultat
         data.append(record)
 
-        # Sauvegarder les résultats
         with open(output_path, 'w') as f:
             json.dump(data, f, indent=2)
         
@@ -136,7 +133,6 @@ def visualize_results(output_dir, dataset):
         logger.warning(f"Dossier de résultats non trouvé: {dataset_dir}")
         return
         
-    # Collecter tous les résultats
     all_results = []
     for file in os.listdir(dataset_dir):
         if file.endswith('.json') and not file.endswith('.lock'):
@@ -152,13 +148,11 @@ def visualize_results(output_dir, dataset):
         logger.warning("Aucun résultat trouvé à visualiser.")
         return
         
-    # Organiser par algorithme
     method_groups = defaultdict(list)
     for res in all_results:
         method = res["algorithm"]
         method_groups[method].append(res)
         
-    # Créer le graphique
     plt.figure(figsize=(12, 8))
     
     markers = ['o', 's', '^', 'D', 'v', '>', '<', 'p', '*']
@@ -200,11 +194,9 @@ def detect_distance_type(dataset_name):
                                            'deep', 'last.fm', 'coco-i2i', 'coco-t2i']):
         return 'angular'
     
-    # Datasets avec distance de Jaccard
+    # Datasets avec distance de Jaccard 
     if any(term in dataset_name for term in ['jaccard', 'kosarak', 'movielens']):
         return 'jaccard'
-    
-    # Par défaut, on utilise la distance euclidienne
     return 'euclidean'
 
 def add_metric_params(algo_conf, params, distance_type):
@@ -213,9 +205,8 @@ def add_metric_params(algo_conf, params, distance_type):
     de son implémentation.
     """
     algo_name = algo_conf['name'].lower()
-    params_copy = params.copy()  # Créer une copie pour ne pas modifier l'original
+    params_copy = params.copy() 
     
-    # Mappings pour les noms de paramètres de métrique par algorithme
     metric_param_names = {
         'annoy': 'metric',
         'faiss_ivfpq': 'metric',
@@ -226,37 +217,35 @@ def add_metric_params(algo_conf, params, distance_type):
         'qsg-ngt': 'metric'
     }
     
-    # Mappings pour les valeurs de métrique par algorithme et type de distance
     metric_values = {
         'annoy': {
             'euclidean': 'euclidean',
             'angular': 'angular',
-            'jaccard': 'hamming'  # Approximation
+            'jaccard': 'hamming' 
         },
         'faiss_ivfpq': {
             'euclidean': 'l2',
             'angular': 'cosine',
-            'jaccard': 'l2'  # Non supporté directement
+            'jaccard': 'l2'  
         },
         'faisshnw': {
             'euclidean': 'l2',
             'angular': 'cosine',
-            'jaccard': 'l2'  # Non supporté directement
+            'jaccard': 'l2' 
         },
         'faishnsw': {
             'euclidean': 'l2',
             'angular': 'cosine',
-            'jaccard': 'l2'  # Non supporté directement
+            'jaccard': 'l2'  
         },
         'hnsw': {
             'euclidean': 'l2',
             'angular': 'cosine',
-            'jaccard': 'l2'  # Non supporté directement
+            'jaccard': 'l2'  
         },
         'voyager': {
             'euclidean': 'euclidean',
             'angular': 'cosine',
-            'jaccard': 'euclidean'  # Non supporté directement
         },
         'qsg-ngt': {
             'euclidean': 'L2',
@@ -265,22 +254,18 @@ def add_metric_params(algo_conf, params, distance_type):
         }
     }
     
-    # Trouver le nom d'algo qui correspond le mieux dans notre mapping
     matching_algo = None
     for key in metric_param_names.keys():
         if key in algo_name:
             matching_algo = key
             break
     
-    # Si l'algo est supporté, ajouter le paramètre de métrique
     if matching_algo:
         param_name = metric_param_names[matching_algo]
         
-        # Si l'algorithme a une configuration spécifique pour cette distance
         if matching_algo in metric_values and distance_type in metric_values[matching_algo]:
             metric_value = metric_values[matching_algo][distance_type]
             
-            # Si ce paramètre n'est pas déjà défini dans les paramètres originaux
             if param_name not in params:
                 params_copy[param_name] = metric_value
                 logger.info(f"Ajout automatique de {param_name}={metric_value} pour {algo_name}")
@@ -296,24 +281,21 @@ def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_
     
     # Prétraitement des données en fonction de la distance
     if distance_type == 'angular' or distance_type == 'cosine':
-        # Pour certains algorithmes sensibles aux problèmes de normalisation (notamment FAISS IVFPQ)
         if algo_name == 'faiss_ivfpq':
             # Forcer l'utilisation de L2 sur des vecteurs normalisés plutôt que IP directement
             params_with_metric['metric'] = 'l2'
             
-    # Configurer la parallélisation interne si nécessaire
+    # Configurer la parallélisation interne
     if inner_threads is not None:
         os.environ["OMP_NUM_THREADS"] = str(inner_threads)
         os.environ["OPENBLAS_NUM_THREADS"] = str(inner_threads)
         os.environ["MKL_NUM_THREADS"] = str(inner_threads)
-        # Pour FAISS
         try:
             faiss.omp_set_num_threads(inner_threads)
         except:
             pass
     
     try:
-        # Importer dynamiquement la classe d'algorithme
         module = importlib.import_module(algo_conf['module'])
         cls = getattr(module, algo_conf['class'])
         
@@ -327,7 +309,6 @@ def execute_single_config(algo_conf, params, xb, xq, gt, k, output_dir, dataset_
             except:
                 pass
         
-        # Pour la distance angulaire, on pré-normalise les vecteurs pour certains algorithmes problématiques
         if (distance_type == 'angular' or distance_type == 'cosine') and algo_name == 'faiss_ivfpq':
             xb_copy = xb.copy().astype(np.float32)
             xq_copy = xq.copy().astype(np.float32)
@@ -500,8 +481,6 @@ if __name__ == "__main__":
 
     # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset lastfm-64-dot --distance angular --parallel inner --visualize
     # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --visualize
-
-
     # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms faiss_ivfpq --visualize
     # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms faissHSNW --visualize
     # python -m benchmark.scripts.benchmark --config benchmark/benchmark/full_comparison.yaml --dataset nytimes-256-angular --distance angular --parallel both --max-workers 4 --inner-threads 2 --algorithms hnsw --visualize

@@ -36,7 +36,6 @@ def load_dataset(name):
 
     print(f"Forme des données - Train: {xb.shape}, Test: {xq.shape}")
 
-    # Appliquer la normalisation uniquement si la distance n'est pas cosine/angular
     if metric in ['cosine', 'angular']:
         print(f"Pas de standardisation : les données sont supposées déjà L2-normalisées (métrique = {metric})")
     else:

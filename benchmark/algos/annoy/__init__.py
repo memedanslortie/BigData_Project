@@ -29,7 +29,7 @@ class Annoy:
             'manhattan': 'manhattan',
             'l1': 'manhattan',
             'hamming': 'hamming',
-            'jaccard': 'hamming',  # Approximation pour Jaccard
+            'jaccard': 'hamming', 
             'dot': 'dot'
         }
         return metric_map.get(metric.lower(), 'euclidean')
@@ -38,14 +38,11 @@ class Annoy:
         """Construire l'index Annoy à partir des données d'apprentissage."""
         n, self.dim = X.shape
         
-        # Initialisation de l'index avec la métrique appropriée
         self.index = AnnoyIndex(self.dim, self.metric)
         
-        # Ajout des points au index
         for i, x in enumerate(X):
             self.index.add_item(i, x.astype('float32'))
         
-        # Construction de l'index
         start = time.time()
         self.index.build(self.n_trees)
         self.build_time = time.time() - start
@@ -68,7 +65,6 @@ class Annoy:
         
         start = time.time()
         for i, x in enumerate(X):
-            # Recherche des k plus proches voisins
             search_k = self.search_k
             if search_k == -1:
                 search_k = self.n_trees * X.shape[0]
